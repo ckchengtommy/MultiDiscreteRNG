@@ -1,3 +1,6 @@
+# MultiDiscreteRNG: Generation of Multivariate Correlated Discrete Count Data
+
+
 The MultiDiscreteRNG package provides functions for generating correlated count data with Generalized Poisson, Negative Binomial and Binomial Distribution marginal distributions. 
 
 
