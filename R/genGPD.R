@@ -10,7 +10,7 @@
 genGPD <-function (no.rows, binObj)
 {
   #browser()
-  inter_bin = generate.binary(no.rows, binObj$pvec, binObj$intermat)
+  inter_bin = generate.binaryVar(no.rows, binObj$pvec, binObj$intermat)
   Mydata = BinToGPD(binObj$pvec, binObj$GPDprop, binObj$Mlocation,
                     inter_bin)
   return(Mydata)
