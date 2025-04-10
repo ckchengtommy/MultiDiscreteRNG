@@ -1,9 +1,9 @@
 #' Check positive definiteness of the intermediate matrix
 #'
 #' @importFrom Matrix nearPD
-#' @importFrom GenOrd corrcheck
+#' @importFrom GenOrd corrcheck contord
 #' @param marginal Marginal vector
-#' @param Sigma Covariance matrix input
+#' @param Sigma Covariance matrix
 #' @return No return values; called it to check parameter inputs
 #' @export
 

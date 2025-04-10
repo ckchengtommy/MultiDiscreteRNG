@@ -3,6 +3,7 @@
 #'
 #' @importFrom mvtnorm rmvnorm
 #' @importFrom MultiOrd validation.CorrMat
+#' @importFrom GenOrd ordcont_nearPD
 #' @param nObs number of observations
 #' @param prop.vec.bin probability of binary variables in a vector
 #' @param corr.mat Correlation matrix
