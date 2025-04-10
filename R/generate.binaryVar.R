@@ -9,7 +9,7 @@
 #' @return multivariate Binary Data
 #' @export
 
-generate.binary <- function(nObs, prop.vec.bin, corr.mat)
+generate.binaryVar <- function(nObs, prop.vec.bin, corr.mat)
 {
   validation.CorrMat(prop.vec.bin, corr.mat)
   sigma_star = ordcont_nearPD(as.list(prop.vec.bin), corr.mat)$SigmaC

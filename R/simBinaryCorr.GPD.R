@@ -37,7 +37,7 @@ simBinaryCorr.GPD<- function (theta.vec, lambda.vec, CorrMat, no.rows, steps = 0
       iteration = iteration + 1
       cat("iteration:", iteration, "\n")
       cat("delta:", sum(change), "\n")
-      inter_bin = generate.binary(no.rows, pvec.pair, del.next)
+      inter_bin = generate.binaryVar(no.rows, pvec.pair, del.next)
       Mydata = BinToGPD(pvec.pair, prop.pair, Mlocation.pair, inter_bin)
 
       if (iteration < 15) {
