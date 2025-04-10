@@ -1,0 +1,17 @@
+Package: MultiDiscreteRNG
+Type: Package
+Title: Generation of Multivariate Correlated Discrete Data (Title Case)
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Chak Kwong (Tommy)", "Cheng",
+      email = "cktommy.cheng@gmail.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: More about what it does (maybe more than one line).
+    Continuation lines should be indented.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
