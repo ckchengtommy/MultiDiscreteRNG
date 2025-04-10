@@ -10,7 +10,6 @@
 #' @return intermediate multivariate binary Correlation matrix
 #' @export
 simBinaryCorr.GPD<- function (theta.vec, lambda.vec, CorrMat, no.rows, steps = 0.025){
-  #browser()
   p = calc.bin.prob.GPD(theta.vec, lambda.vec)
   pvec = p$p
   prop= p$prop
