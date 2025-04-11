@@ -11,10 +11,8 @@
 #' @export
 #'
 BinToB <- function(prop.vec.bin, BProp, Mlocation, bin.data){
-  #browser()
   J = length(prop.vec.bin)
   K = numeric(0)
-  #p = calc.bin.prob.B(n.vec, p.vec)
   prop = BProp
 
   B.data = matrix(NA, nrow(bin.data), ncol(bin.data))
