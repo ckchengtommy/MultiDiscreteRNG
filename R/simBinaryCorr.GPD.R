@@ -31,7 +31,7 @@ simBinaryCorr.GPD<- function (theta.vec, lambda.vec, CorrMat, no.rows, steps = 0
     prop.pair <- list(prop[[pair.temp[1]]], prop [[pair.temp[2]]])
     change = 1
     iteration = 0
-    cat("calculating the intermediate binary correlations pair Sigma", pair.temp , "\n")
+#    cat("calculating the intermediate binary correlations pair Sigma", pair.temp , "\n")
     while (sum(change > 0.001) > 0) {
       iteration = iteration + 1
       cat("iteration:", iteration, "\n")

@@ -18,13 +18,7 @@ calc.bin.prob.B <- function(n.vec, p.vec){
   Mlocation <- numeric(J)
 
   for(i in 1:J){
-    #j = rbinom(100000, size = n.vec[i], prob = p.vec[i])
-    #j.table = table(j)/100000
-    #b.upper.limit = as.numeric(names(j.table)[length(j.table)])
     b.upper.limit = n.vec[i]
-    #while(  dnbinom(b.upper.limit, size = n.vec[i], prob = p.vec[i]) >= 1e-10){
-    #  b.upper.limit = b.upper.limit +1
-    #}
     X.prop = dbinom(c(0:b.upper.limit) , size = n.vec[i], prob = p.vec[i])
     names(X.prop) = as.character (c(0:b.upper.limit))
     X_median = qbinom(0.5, size = n.vec[i], prob = p.vec[i])

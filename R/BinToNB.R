@@ -12,7 +12,6 @@
 BinToNB <- function(prop.vec.bin, NBprop, Mlocation, bin.data){
   J = length(prop.vec.bin)
   K = numeric(0)
-  #p = calc.bin.prob(theta.vec, lambda.vec)
   prop = NBprop
 
   NB.data = matrix(NA, nrow(bin.data), ncol(bin.data))
