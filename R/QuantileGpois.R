@@ -4,7 +4,7 @@
 #' @param p vector of probabilities
 #' @param theta vector of theta
 #' @param lambda vector of lambda
-#'
+#' @param details A logical flag to return the computational details
 #' @return the quantile of GPD
 #'
 #' @export

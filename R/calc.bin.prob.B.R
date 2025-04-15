@@ -1,10 +1,11 @@
 #' This function implements Step 1 of the algorithm.
 #' It collapses the discrete outcome to binary ones for each variable.
 #'
+#' @importFrom stats dbinom qbinom
 #' @param n.vec vector of number of trials
 #' @param p.vec vector of probabilities
 #'
-#' @return vector of binary probability, dichotomization threshold
+#' @return vector of binary probability, dichotomous threshold
 #'
 #' @export
 

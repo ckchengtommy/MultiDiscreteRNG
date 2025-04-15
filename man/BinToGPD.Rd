@@ -2,7 +2,7 @@
 % Please edit documentation in R/BinToGPD.R
 \name{BinToGPD}
 \alias{BinToGPD}
-\title{This function implements Step 5 of the algorithm
+\title{This function implements Step 5 of the algorithm.
 It converts the multivariate binary data back to the original GPD scale}
 \usage{
 BinToGPD(prop.vec.bin, GPDprop, Mlocation, bin.data)
@@ -20,6 +20,6 @@ BinToGPD(prop.vec.bin, GPDprop, Mlocation, bin.data)
 multivariate GPD data and its correlation matrix
 }
 \description{
-This function implements Step 5 of the algorithm
+This function implements Step 5 of the algorithm.
 It converts the multivariate binary data back to the original GPD scale
 }

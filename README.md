@@ -1,4 +1,4 @@
-The R package MultiDiscreteRNG implements the binary collasping and re-collasping approach to generate Multivariate Correlation Discrete Data, specifially with generalized Poisson, negative binomial and binomial marginal distributions. 
+The R package MultiDiscreteRNG implements the binary collapsing and re-collapsing approach to generate Multivariate Correlation Discrete Data with generalized Poisson, negative binomial and binomial marginal distributions. 
 
 To install the package
 

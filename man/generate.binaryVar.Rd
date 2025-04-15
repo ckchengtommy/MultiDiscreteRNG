@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate.binaryVar.R
 \name{generate.binaryVar}
 \alias{generate.binaryVar}
-\title{Generate multivariate Binary data using the Emrich and Piedmonte (1991)
+\title{Generate multivariate Binary data using the Emrich and Piedmonte (1991) approach
 Approach}
 \usage{
 generate.binaryVar(nObs, prop.vec.bin, corr.mat)
@@ -18,6 +18,6 @@ generate.binaryVar(nObs, prop.vec.bin, corr.mat)
 multivariate Binary Data
 }
 \description{
-Generate multivariate Binary data using the Emrich and Piedmonte (1991)
+Generate multivariate Binary data using the Emrich and Piedmonte (1991) approach
 Approach
 }

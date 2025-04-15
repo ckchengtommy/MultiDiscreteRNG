@@ -1,4 +1,4 @@
-#' This function implements Step 5 of the algorithm
+#' This function implements Step 5 of the algorithm.
 #' It converts the multivariate binary data back to the original GPD scale
 #'
 #' @param prop.vec.bin vector of binary probabilities

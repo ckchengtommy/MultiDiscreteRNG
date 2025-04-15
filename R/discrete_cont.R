@@ -2,13 +2,18 @@
 #'
 #' @importFrom Matrix nearPD
 #' @importFrom GenOrd corrcheck
-#' @param marginal Marginal vector
-#' @param Sigma Covariance matrix
+#' @param marginal a list of \eqn{k} elements, where \eqn{k} is the number of variables.
+#' The \eqn{i}-th element of \code{marginal} is the vector of the cumulative probabilities defining the marginal distribution of the \eqn{i}-th component of the  multivariate variable. If the \eqn{i}-th component can take \eqn{k_i} values, the \eqn{i}-th element of \code{marginal} will contain \eqn{k_i-1} probabilities (the \eqn{k_i}-th is obviously 1 and shall not be included).
+#' @param Sigma the target correlation matrix of the discrete variables
+#' @param Spearman A logical flag indicating whether Spearman correlation should be used
+#' @param maxit maximum iterations of the algorithm to correct PD matrix
+#' @param epsilon tolerance of the algorithm convergence
+#' @param support a list of \eqn{k} elements, where \eqn{k} is the number of variables. The \eqn{i}-th element of \code{support} is the vector containing the ordered values of the support of the \eqn{i}-th variable. By default, the support of the \eqn{i}-th variable is \eqn{1,2,...,k_i}
 #' @return No return values; called it to check parameter inputs
 #' @export
 
 
-ordcont_nearPD <- function (marginal, Sigma, support = list(), Spearman = FALSE,
+discrete_cont <- function (marginal, Sigma, support = list(), Spearman = FALSE,
                             epsilon = 1e-06, maxit = 100)
 {
   #browser()

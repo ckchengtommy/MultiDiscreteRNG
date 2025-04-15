@@ -13,7 +13,7 @@ calc.bin.prob.GPD(theta.vec, lambda.vec)
 \item{lambda.vec}{vector of lambda values}
 }
 \value{
-vector of binary probability, dichotomization threshold
+vector of binary probability, dichotomous threshold
 }
 \description{
 This function implements Step 1 of the algorithm.

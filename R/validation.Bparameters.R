@@ -6,7 +6,7 @@
 #' @param p.vec Vector of probability
 #' @return No return values; called it to check parameter inputs
 #' @examples
-#' validation.Bparameters(theta.vec = c(10, 15), lambda.vec = c(0.4, 0.2))
+#' validation.Bparameters(n.vec = c(10, 15), p.vec = c(0.4, 0.2))
 #' @export
 
 

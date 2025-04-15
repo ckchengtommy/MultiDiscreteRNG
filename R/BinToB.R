@@ -1,8 +1,9 @@
-#' This function implements Step 5 of the algorithm
+#' This function implements Step 5 of the algorithm.
 #' It converts the multivariate binary data back to the original Binomial scale
 #'
+#' @importFrom stats cor
 #' @param prop.vec.bin vector of binary probabilities
-#' @param Bprop B proportion
+#' @param BProp Binary proportion
 #' @param Mlocation locations of median in the vector
 #' @param bin.data generated multivariate binary data
 #'

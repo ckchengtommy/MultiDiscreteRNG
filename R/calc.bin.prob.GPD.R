@@ -4,7 +4,7 @@
 #' @param theta.vec vector of theta values
 #' @param lambda.vec vector of lambda values
 #'
-#' @return vector of binary probability, dichotomization threshold
+#' @return vector of binary probability, dichotomous threshold
 #'
 #' @export
 calc.bin.prob.GPD <- function(theta.vec, lambda.vec){

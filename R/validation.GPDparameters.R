@@ -22,7 +22,6 @@ validation.GPDparameters <- function(theta.vec, lambda.vec)
     stop("lambda has to be less than 1!")
   }
   if(sum(w3)>0){
-    stop(paste("For lambda < 0, lambda must be greater than or equal to -theta/4 which is ",
-               (-theta)/4, "!", sep = ""))
+    stop(paste("For lambda < 0, lambda must be greater than or equal to -theta/4"))
   }
 }

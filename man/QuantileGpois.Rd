@@ -12,6 +12,8 @@ QuantileGpois(p, theta, lambda, details = FALSE)
 \item{theta}{vector of theta}
 
 \item{lambda}{vector of lambda}
+
+\item{details}{A logical flag to return the computational details}
 }
 \value{
 the quantile of GPD

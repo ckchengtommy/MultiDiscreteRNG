@@ -2,7 +2,7 @@
 % Please edit documentation in R/BinToNB.R
 \name{BinToNB}
 \alias{BinToNB}
-\title{This function implements Step 5 of the algorithm
+\title{This function implements Step 5 of the algorithm.
 It converts the multivariate binary data back to the original GPD scale}
 \usage{
 BinToNB(prop.vec.bin, NBprop, Mlocation, bin.data)
@@ -20,6 +20,6 @@ BinToNB(prop.vec.bin, NBprop, Mlocation, bin.data)
 multivariate NB data and its correlation matrix
 }
 \description{
-This function implements Step 5 of the algorithm
+This function implements Step 5 of the algorithm.
 It converts the multivariate binary data back to the original GPD scale
 }

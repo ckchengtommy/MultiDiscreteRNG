@@ -2,7 +2,7 @@
 #'
 #'
 #' @param r.vec Vector of number of trials parameters
-#' @param prob.vec Vector of probabilties
+#' @param prob.vec Vector of probabilities
 #' @return No return values; called it to check parameter inputs
 #' @examples
 #' validation.NBparameters(r.vec = c(10, 15), prob.vec = c(0.7, 0.5))

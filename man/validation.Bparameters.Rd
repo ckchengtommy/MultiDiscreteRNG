@@ -18,5 +18,5 @@ No return values; called it to check parameter inputs
 This function returns the sum of two numbers.
 }
 \examples{
-validation.Bparameters(theta.vec = c(10, 15), lambda.vec = c(0.4, 0.2))
+validation.Bparameters(n.vec = c(10, 15), p.vec = c(0.4, 0.2))
 }

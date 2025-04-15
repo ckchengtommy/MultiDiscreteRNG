@@ -9,7 +9,7 @@ validation.NBparameters(r.vec, prob.vec)
 \arguments{
 \item{r.vec}{Vector of number of trials parameters}
 
-\item{prob.vec}{Vector of probabilties}
+\item{prob.vec}{Vector of probabilities}
 }
 \value{
 No return values; called it to check parameter inputs

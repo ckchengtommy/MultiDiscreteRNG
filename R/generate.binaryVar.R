@@ -1,6 +1,7 @@
-#' Generate multivariate Binary data using the Emrich and Piedmonte (1991)
+#' Generate multivariate Binary data using the Emrich and Piedmonte (1991) approach
 #' Approach
 #'
+#' @importFrom stats qnorm
 #' @importFrom mvtnorm rmvnorm
 #' @importFrom MultiOrd validation.CorrMat
 #' @importFrom GenOrd corrcheck contord
@@ -13,7 +14,7 @@
 generate.binaryVar <- function(nObs, prop.vec.bin, corr.mat)
 {
   validation.CorrMat(prop.vec.bin, corr.mat)
-  sigma_star = ordcont_nearPD(as.list(prop.vec.bin), corr.mat)$SigmaC
+  sigma_star = discrete_cont(as.list(prop.vec.bin), corr.mat)$SigmaC
   d = ncol(sigma_star)
   xx1 = rmvnorm(nObs, mean = rep(0, d), sigma = sigma_star)
   p = prop.vec.bin

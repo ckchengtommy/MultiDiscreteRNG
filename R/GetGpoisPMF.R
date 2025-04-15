@@ -1,10 +1,11 @@
-#' Get PMF of Generalized Poisson distribution
+#' Get probability mass function of Generalized Poisson distribution
 #'
-#' This function returns PMF of GPD
+#' This function returns a table of the probability mass function of GPD
 #'
-#' @param p probability of GDP poisson pmf
+#' @param p probability of generalized Poisson distribution
 #' @param theta GPD theta value
 #' @param lambda GPD lambda value
+#' @param details A logical flag indicating computation information should be returned
 #' @return a PMF table
 #' @export
 

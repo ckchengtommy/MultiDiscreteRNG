@@ -1,11 +1,13 @@
 #' This function implements Step 2 of the algorithm
 #' It calculates the intermediate binary correlations.
 #'
+#' @importFrom utils combn
 #' @importFrom matrixcalc is.positive.definite
 #' @param theta.vec vector of theta values
 #' @param lambda.vec vector of lambda values
 #' @param CorrMat specified Correlation matrix
 #' @param no.rows number of observations for generating Multivariate Binary data
+#' @param steps Fraction of difference between the current and target matrix to be added in each iteration.
 #'
 #' @return intermediate multivariate binary Correlation matrix
 #' @export

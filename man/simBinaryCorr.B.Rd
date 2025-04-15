@@ -15,6 +15,8 @@ simBinaryCorr.B(n.vec, p.vec, CorrMat, no.rows, steps = 0.025)
 \item{CorrMat}{specified Correlation matrix}
 
 \item{no.rows}{number of observations for generating Multivariate Binary data}
+
+\item{steps}{Fraction of difference between the current and target matrix to be added in each iteration.}
 }
 \value{
 intermediate multivariate binary Correlation matrix
