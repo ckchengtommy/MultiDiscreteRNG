@@ -9,11 +9,17 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: A method to generate multivariate discrete data with Generalized Poisson, Negative Binomial 
+            and Binomial Distribution marginal distributions
+License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
+Imports:
+    GenOrd,
+    Matrix,
+    MultiOrd,
+    matrixcalc,
+    mvtnorm
 RoxygenNote: 7.3.2
 URL: https://github.com/ckchengtommy/MultiDiscreteRNG
 BugReports: https://github.com/ckchengtommy/MultiDiscreteRNG/issues
