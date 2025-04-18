@@ -2,8 +2,13 @@ Package: MultiDiscreteRNG
 Type: Package
 Title: Generation of Multivariate Correlated Discrete Data
 Version: 1.0.0
-Author: Chak Kwong (Tommy) Cheng, Hakan Demirtas
-Maintainer: Chak Kwong (Tommy) Cheng <ccheng46@uic.edu>
+Authors@R: c(person(given = "Chak Kwong (Tommy)",
+                        family = "Cheng",
+                        email  = "ccheng46@uic.edu",
+                        role = c("aut", "cre")),
+                 person(given = "Hakan",
+                        family = "Demirtas",
+                        role = "aut"))
 Description: Generation of multivariate correlated discrete data with Generalized Poisson, Negative Binomial and Binomial Distribution marginal distributions.
 License: GPL-2 | GPL-3
 Encoding: UTF-8
