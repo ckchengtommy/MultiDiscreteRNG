@@ -17,7 +17,7 @@ install.packages("MultiDiscreteRNG")
 
 ## Example 1: Trivariate Generalized Poisson Distribution
 
-To generate a trivariate generalized Poisson distribution with dispersion parameters $\lambda_1 = 0.1, \lambda_2 = 0.2, \lambda_3 = 0.3$, rate parameters $\theta_1 = 7, \theta_2 = 0.7, \theta_3 = 40$, with a correlation matrix, and pairwise correlation $\rho_{12} = 0.3, \rho_{13} = 0.3, \rho_{23} = 0.3$
+To generate a trivariate generalized Poisson distribution with dispersion parameters $\lambda_1 = 0.1, \lambda_2 = 0.2, \lambda_3 = 0.3$, rate parameters $\theta_1 = 7, \theta_2 = 0.7, \theta_3 = 40$, with a correlation matrix $\rho_{12} = 0.3, \rho_{13} = 0.3, \rho_{23} = 0.3$
 
 First, specify the marginal distribution parameters with
 
@@ -52,7 +52,7 @@ GPD.data = genGPD(no.rows = 100, binObj)$y
 
 Note: Let $y$ be the marginal negative binomial random variable. We define the parameterization of the negative binomial distribution as follows: y is the number of failures before $r^{th}$ success, n is the number of trials per observation and p is the probability of success.
 
-To generate a 4-variate negative binomial distribution with number of trials parameter $r_1 =3, r_2 = 6, r_3 = 9, r_4 =10$, probability of success parameters $\theta_1 = 7, \theta_2 = 0.7, \theta_3 = 40$ and a unstructured correlation matrix with some arbitrary values.
+To generate a 4-variate negative binomial distribution with number of trials parameter $r_1 = 3, r_2 = 6, r_3 = 9, r_4 = 10$, probability of success parameters $\theta_1 = 7, \theta_2 = 0.7, \theta_3 = 40$ and a unstructured correlation matrix with some arbitrary values.
 
 First, specify the marginal distribution parameters with:
 
