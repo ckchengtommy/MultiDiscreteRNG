@@ -17,14 +17,7 @@ install.packages("MultiDiscreteRNG")
 
 ## Example
 
-1.  Generate a trivariate generalized Poisson distribution with dispersion parameters $\lambda_1 = 0.2, \lambda_2 = 0.2, \lambda_3 = 0.3$, rate parameters $\theta_1 = 7, \theta_2 = 0.7, \theta_3 = 40$, with a correlation matrix $$
-     \Sigma \;=\;
-     \begin{pmatrix}
-       1 & 0.3 & 0.3 \\
-       0.3 & 1 & 0.3 \\
-       0.3 & 0.3 & 1 \\
-     \end{pmatrix}
-     $$
+1.  Generate a trivariate generalized Poisson distribution with dispersion parameters $\lambda_1 = 0.1, \lambda_2 = 0.2, \lambda_3 = 0.3$, rate parameters $\theta_1 = 7, \theta_2 = 0.7, \theta_3 = 40$, with a correlation matrix, and pairwise correlation $\rho_{12} = 0.3, \rho_{13} = 0.3, \rho_{23} = 0.3$
 
 First, specify the marginal distribution parameters with
 
@@ -54,5 +47,3 @@ Lastly, generate the trivaiarte generalized Poisson distribution with n = 100 sa
 ``` r
 GPD.data = genGPD(no.rows = 100, binObj)
 ```
-
-
