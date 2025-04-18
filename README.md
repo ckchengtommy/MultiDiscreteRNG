@@ -1,6 +1,6 @@
 ## Overview
 
-The R package MultiDiscreteRNG implements the binary collapsing and re-collapsing approach by Demirtas 2006 to generate Multivariate correlated discrete data with generalized Poisson, negative binomial and binomial marginal distributions.
+The R package MultiDiscreteRNG implements the binary collapsing and re-collapsing approach by Demirtas 2006 to generate multivariate correlated discrete data with generalized Poisson, negative binomial and binomial marginal distributions.
 
 ## Installation
 
@@ -52,7 +52,7 @@ GPD.data = genGPD(no.rows = 100, binObj)$y
 
 Note: Let $y$ be the marginal negative binomial random variable. We define the parameterization of the negative binomial distribution as follows: y is the number of failures before $r^{th}$ success, n is the number of trials per observation and p is the probability of success.
 
-To generate a 4-variate negative binomial distribution with number of trials parameter $r_1 = 3, r_2 = 6, r_3 = 9, r_4 = 10$, probability of success parameters $\theta_1 = 7, \theta_2 = 0.7, \theta_3 = 40$ and a unstructured correlation matrix with some arbitrary values.
+To generate a 4-variate negative binomial distribution with number of trials parameter $r_1 = 3, r_2 = 6, r_3 = 9, r_4 = 10$, probability of success parameters $p_1 = 0.51, p_2 = 0.32, p_3 = 0.64, p_4 = 0.43$ and a unstructured correlation matrix with some arbitrary values.
 
 First, specify the marginal distribution parameters with:
 
