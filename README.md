@@ -45,5 +45,5 @@ binObj = simBinaryCorr.GPD(theta.vec, lambda.vec, cmat, 1000000, steps= 0.025)
 Lastly, generate the trivaiarte generalized Poisson distribution with n = 100 samples
 
 ``` r
-GPD.data = genGPD(no.rows = 100, binObj)
+GPD.data = genGPD(no.rows = 100, binObj)$y
 ```
