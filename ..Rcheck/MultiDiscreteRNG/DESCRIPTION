@@ -16,15 +16,10 @@ Description: Generation of multivariate correlated discrete data with generalize
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
-Imports:
-    GenOrd,
-    Matrix,
-    MultiOrd,
-    matrixcalc,
-    mvtnorm
+Imports: GenOrd, Matrix, MultiOrd, matrixcalc, mvtnorm
 URL: https://github.com/ckchengtommy/MultiDiscreteRNG
 BugReports: https://github.com/ckchengtommy/MultiDiscreteRNG/issues
 RoxygenNote: 7.3.2
-Suggests: 
-    testthat (>= 3.0.0)
+Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Built: R 4.4.3; ; 2025-06-20 15:18:46 UTC; unix
