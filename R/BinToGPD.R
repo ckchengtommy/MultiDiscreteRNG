@@ -1,12 +1,14 @@
+#' Convert multivariate binary data back to the original generalized poisson scale
+#'
 #' This function implements Step 5 of the algorithm.
-#' It converts the multivariate binary data back to the original GPD scale
+#' It converts multivariate binary data back to the original GPD scale.
 #'
-#' @param prop.vec.bin vector of binary probabilities
-#' @param GPDprop GPD proportion
-#' @param Mlocation locations of median in the vector
-#' @param bin.data generated multivariate binary data
+#' @param prop.vec.bin A vector of binary probabilities.
+#' @param GPDprop Generalized Poisson distribution proportions
+#' @param Mlocation Indices of the medians in the vector
+#' @param bin.data Generated multivariate binary data
 #'
-#' @return multivariate GPD data and its correlation matrix
+#' @return A list containing the multivariate GPD data and its correlation matrix
 #'
 #' @export
 BinToGPD <- function(prop.vec.bin, GPDprop, Mlocation, bin.data){

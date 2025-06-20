@@ -12,9 +12,9 @@ simBinaryCorr.NB(r.vec, prob.vec, CorrMat, no.rows, steps = 0.025)
 
 \item{prob.vec}{vector of probabilities}
 
-\item{CorrMat}{specified Correlation matrix}
+\item{CorrMat}{specified correlation matrix}
 
-\item{no.rows}{number of observations for generating Multivariate Binary data}
+\item{no.rows}{number of observations for generating multivariate binary data}
 
 \item{steps}{fraction of difference between the current and target matrix to be added in each iteration.}
 }

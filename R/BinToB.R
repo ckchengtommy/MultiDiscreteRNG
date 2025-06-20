@@ -1,12 +1,14 @@
-#' This function implements step 5 of the algorithm in the paper.
-#' It converts the multivariate binary data back to the original binomial scale
+#' Convert Multivariate Binary Data Back to the Original Binomial Scale
+#'
+#' This function implements step 5 of the algorithm described in the paper.
+#' It converts multivariate binary data back to the original binomial scale.
 #'
 #' @importFrom stats cor
-#' @param prop.vec.bin vector of binary probabilities
+#' @param prop.vec.bin A vector of binary probabilities
 #' @param BProp Binary proportion
-#' @param Mlocation locations of median in the vector
-#' @param bin.data generated multivariate binary data
-#' @return multivariate Binomial data and its correlation matrix
+#' @param Mlocation Indices of the medians in the vector
+#' @param bin.data Generated multivariate binary data.
+#' @return A list containing the multivariate binomial data and its correlation matrix
 #'
 #' @export
 #'

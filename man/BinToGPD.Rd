@@ -2,24 +2,23 @@
 % Please edit documentation in R/BinToGPD.R
 \name{BinToGPD}
 \alias{BinToGPD}
-\title{This function implements Step 5 of the algorithm.
-It converts the multivariate binary data back to the original GPD scale}
+\title{Convert multivariate binary data back to the original generalized poisson scale}
 \usage{
 BinToGPD(prop.vec.bin, GPDprop, Mlocation, bin.data)
 }
 \arguments{
-\item{prop.vec.bin}{vector of binary probabilities}
+\item{prop.vec.bin}{A vector of binary probabilities.}
 
-\item{GPDprop}{GPD proportion}
+\item{GPDprop}{Generalized Poisson distribution proportions}
 
-\item{Mlocation}{locations of median in the vector}
+\item{Mlocation}{Indices of the medians in the vector}
 
-\item{bin.data}{generated multivariate binary data}
+\item{bin.data}{Generated multivariate binary data}
 }
 \value{
-multivariate GPD data and its correlation matrix
+A list containing the multivariate GPD data and its correlation matrix
 }
 \description{
 This function implements Step 5 of the algorithm.
-It converts the multivariate binary data back to the original GPD scale
+It converts multivariate binary data back to the original GPD scale.
 }

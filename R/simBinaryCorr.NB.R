@@ -5,8 +5,8 @@
 #' @importFrom matrixcalc is.positive.definite
 #' @param r.vec vector of number of trials
 #' @param prob.vec vector of probabilities
-#' @param CorrMat specified Correlation matrix
-#' @param no.rows number of observations for generating Multivariate Binary data
+#' @param CorrMat specified correlation matrix
+#' @param no.rows number of observations for generating multivariate binary data
 #' @param steps fraction of difference between the current and target matrix to be added in each iteration.
 #' @return intermediate multivariate binary Correlation matrix
 #' @export

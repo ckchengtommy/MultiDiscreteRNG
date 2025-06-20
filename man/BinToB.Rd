@@ -2,24 +2,23 @@
 % Please edit documentation in R/BinToB.R
 \name{BinToB}
 \alias{BinToB}
-\title{This function implements step 5 of the algorithm in the paper.
-It converts the multivariate binary data back to the original binomial scale}
+\title{Convert Multivariate Binary Data Back to the Original Binomial Scale}
 \usage{
 BinToB(prop.vec.bin, BProp, Mlocation, bin.data)
 }
 \arguments{
-\item{prop.vec.bin}{vector of binary probabilities}
+\item{prop.vec.bin}{A vector of binary probabilities}
 
 \item{BProp}{Binary proportion}
 
-\item{Mlocation}{locations of median in the vector}
+\item{Mlocation}{Indices of the medians in the vector}
 
-\item{bin.data}{generated multivariate binary data}
+\item{bin.data}{Generated multivariate binary data.}
 }
 \value{
-multivariate Binomial data and its correlation matrix
+A list containing the multivariate binomial data and its correlation matrix
 }
 \description{
-This function implements step 5 of the algorithm in the paper.
-It converts the multivariate binary data back to the original binomial scale
+This function implements step 5 of the algorithm described in the paper.
+It converts multivariate binary data back to the original binomial scale.
 }

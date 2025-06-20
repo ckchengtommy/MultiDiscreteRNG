@@ -1,12 +1,12 @@
-#' Get probability mass function of Generalized Poisson distribution
+#' Get probability mass function of generalized Poisson distribution
 #'
-#' This function returns a table of the probability mass function of GPD
+#' This function returns a table of the probability mass function of generalized Poisson distribution
 #'
-#' @param p probability of generalized Poisson distribution
-#' @param theta GPD theta value
-#' @param lambda GPD lambda value
-#' @param details A logical flag indicating computation information should be returned
-#' @return a PMF table
+#' @param p Probability parameter for the generalized Poisson distribution.
+#' @param theta Theta parameter(s) for the generalized Poisson distribution.
+#' @param lambda Lambda parameter(s) for the generalized Poisson distribution.
+#' @param details Logical; if TRUE, additional computation information is returned.
+#' @return A table containing the probability mass function.
 #' @export
 
 

@@ -2,22 +2,22 @@
 % Please edit documentation in R/GetGpoisPMF.R
 \name{GetGpoisPMF}
 \alias{GetGpoisPMF}
-\title{Get probability mass function of Generalized Poisson distribution}
+\title{Get probability mass function of generalized Poisson distribution}
 \usage{
 GetGpoisPMF(p, theta, lambda, details = FALSE)
 }
 \arguments{
-\item{p}{probability of generalized Poisson distribution}
+\item{p}{Probability parameter for the generalized Poisson distribution.}
 
-\item{theta}{GPD theta value}
+\item{theta}{Theta parameter(s) for the generalized Poisson distribution.}
 
-\item{lambda}{GPD lambda value}
+\item{lambda}{Lambda parameter(s) for the generalized Poisson distribution.}
 
-\item{details}{A logical flag indicating computation information should be returned}
+\item{details}{Logical; if TRUE, additional computation information is returned.}
 }
 \value{
-a PMF table
+A table containing the probability mass function.
 }
 \description{
-This function returns a table of the probability mass function of GPD
+This function returns a table of the probability mass function of generalized Poisson distribution
 }
