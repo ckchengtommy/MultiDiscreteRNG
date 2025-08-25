@@ -3,20 +3,20 @@
 #'
 #' @importFrom utils combn
 #' @importFrom matrixcalc is.positive.definite
-#' @param r.vec vector of number of trials
-#' @param prob.vec vector of probabilities
+#' @param NB.r.vec vector of number of trials
+#' @param NB.prob.vec vector of probabilities
 #' @param CorrMat specified correlation matrix
 #' @param no.rows number of observations for generating multivariate binary data
 #' @param steps fraction of difference between the current and target matrix to be added in each iteration.
 #' @return intermediate multivariate binary Correlation matrix
 #' @export
 #'
-simBinaryCorr.NB<- function (r.vec, prob.vec, CorrMat, no.rows, steps = 0.025){
-  p = calc.bin.prob.NB(r.vec, prob.vec)
+simBinaryCorr.NB<- function (NB.r.vec, NB.prob.vec, CorrMat, no.rows, steps = 0.025){
+  p = calc.bin.prob.NB(NB.r.vec, NB.prob.vec)
   pvec = p$p
   prop= p$prop
   Mlocation = p$Mlocation
-  n.variable = length(r.vec)
+  n.variable = length(NB.r.vec)
   pair.combn = combn(n.variable, 2)
   n.corr = ncol(pair.combn)
   intermat.vec <- c()

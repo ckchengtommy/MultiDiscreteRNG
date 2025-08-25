@@ -2,20 +2,28 @@
 % Please edit documentation in R/calc.bin.prob.NB.R
 \name{calc.bin.prob.NB}
 \alias{calc.bin.prob.NB}
-\title{This function implements Step 1 of the algorithm.
-It collapses the discrete outcome to binary ones for each variable.}
+\title{Collapse discrete negative binomial outcomes to binary variables}
 \usage{
-calc.bin.prob.NB(r.vec, prob.vec)
+calc.bin.prob.NB(NB.r.vec, NB.prob.vec)
 }
 \arguments{
-\item{r.vec}{vector of number of trials}
+\item{NB.r.vec}{vector of number of trials}
 
-\item{prob.vec}{vector of probabilities}
+\item{NB.prob.vec}{vector of probabilities}
 }
 \value{
 vector of binary probability, dichotomous threshold
 }
 \description{
-This function implements Step 1 of the algorithm.
-It collapses the discrete outcome to binary ones for each variable.
+This function implements Step 1 of the algorithm. It collapses each discrete
+outcome from the negative binomial distribution into a binary
+probability and determines a dichotomous threshold for each variable.
+}
+\examples{
+NB.r.vec <- c(10, 3, 16)
+NB.prob.vec <- c(0.65, 0.4, 0.88)
+
+# Compute binary probabilities, PMFs, and thresholds
+p <- calc.bin.prob.NB(NB.r.vec, NB.prob.vec)
+
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/BinToB.R
 \name{BinToB}
 \alias{BinToB}
-\title{Convert Multivariate Binary Data Back to the Original Binomial Scale}
+\title{Convert multivariate binary data back to the original binomial scale}
 \usage{
 BinToB(prop.vec.bin, BProp, Mlocation, bin.data)
 }
@@ -19,6 +19,34 @@ BinToB(prop.vec.bin, BProp, Mlocation, bin.data)
 A list containing the multivariate binomial data and its correlation matrix
 }
 \description{
-This function implements step 5 of the algorithm described in the paper.
-It converts multivariate binary data back to the original binomial scale.
+This function maps multivariate binary data to multivariate binomial outcomes,
+preserving the original marginal distribution characteristics. Given the binary
+representation of the data, the function  assigns binomial values
+based on the original probability mass functions and the location of the median split.
+}
+\examples{
+# Generate binary probabilities and probability mass functions for 3 variables
+B.n.vec <- c(3, 4, 5)
+B.prob.vec <- c(0.5, 0.5, 0.5)
+p <- calc.bin.prob.B(B.n.vec, B.prob.vec)
+pvec <- p$p
+prop <- p$prop
+Mlocation <- p$Mlocation
+
+# Select the first two variables for demonstration
+pvec.pair      <- pvec[1:2]
+Mlocation.pair <- Mlocation[1:2]
+prop.pair      <- list(prop[[1]], prop[[2]])
+
+# Specify a target correlation matrix for two binary variables
+del.next <- matrix(c(1.0, 0.3,
+                     0.3, 1.0),
+                   nrow = 2, byrow = TRUE)
+
+# Simulate N = 100 binary observations with the desired correlation
+inter_bin <- generate.binaryVar(100, pvec.pair, del.next)
+
+# Convert back to binomial scale
+Mydata <- BinToB(pvec.pair, prop.pair, Mlocation.pair, inter_bin)
+
 }

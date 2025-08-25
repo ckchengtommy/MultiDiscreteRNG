@@ -1,4 +1,6 @@
-#' This function generates multivariate Binomial data
+#' Generates multivariate binomial data from binary parameters
+#'
+#'
 #'
 #' @param no.rows number of data
 #' @param binObj intermediate correlation matrix object

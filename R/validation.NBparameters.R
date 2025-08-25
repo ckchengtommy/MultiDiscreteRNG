@@ -1,19 +1,19 @@
 #' Validate if the input NB parameters are within feasible range
 #'
 #'
-#' @param r.vec Vector of number of trials parameters
-#' @param prob.vec Vector of probabilities
+#' @param NB.r.vec Vector of number of trials parameters
+#' @param NB.prob.vec Vector of probabilities
 #' @return No return values; called it to check parameter inputs
 #' @examples
-#' validation.NBparameters(r.vec = c(10, 15), prob.vec = c(0.7, 0.5))
+#' validation.NBparameters(NB.r.vec = c(10, 15), NB.prob.vec = c(0.7, 0.5))
 #' @export
 
 
-validation.NBparameters <- function(r.vec, prob.vec)
+validation.NBparameters <- function(NB.r.vec, NB.prob.vec)
 {
-  w1 = r.vec <0
-  w2 = prob.vec <0
-  w3 = prob.vec >1
+  w1 = NB.r.vec <0
+  w2 = NB.prob.vec <0
+  w3 = NB.prob.vec >1
 
   if(sum(w1)>0){
     stop("number of trials must be greater than 0")

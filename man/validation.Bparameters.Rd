@@ -4,12 +4,12 @@
 \alias{validation.Bparameters}
 \title{Validate if the input Binomial parameters are within feasible range}
 \usage{
-validation.Bparameters(n.vec, p.vec)
+validation.Bparameters(B.n.vec, B.prob.vec)
 }
 \arguments{
-\item{n.vec}{Vector of number of trials}
+\item{B.n.vec}{Vector of number of trials}
 
-\item{p.vec}{Vector of probability}
+\item{B.prob.vec}{Vector of probability}
 }
 \value{
 No return values; called it to check parameter inputs
@@ -18,5 +18,5 @@ No return values; called it to check parameter inputs
 This function returns the sum of two numbers.
 }
 \examples{
-validation.Bparameters(n.vec = c(10, 15), p.vec = c(0.4, 0.2))
+validation.Bparameters(B.n.vec = c(10, 15), B.prob.vec = c(0.4, 0.2))
 }

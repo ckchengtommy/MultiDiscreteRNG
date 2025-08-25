@@ -3,20 +3,20 @@
 #'
 #' @importFrom utils combn
 #' @importFrom matrixcalc is.positive.definite
-#' @param theta.vec vector of theta values
-#' @param lambda.vec vector of lambda values
+#' @param GPD.theta.vec vector of theta values
+#' @param GPD.lambda.vec vector of lambda values
 #' @param CorrMat specified Correlation matrix
 #' @param no.rows number of observations for generating Multivariate Binary data
 #' @param steps Fraction of difference between the current and target matrix to be added in each iteration.
 #'
 #' @return intermediate multivariate binary Correlation matrix
 #' @export
-simBinaryCorr.GPD<- function (theta.vec, lambda.vec, CorrMat, no.rows, steps = 0.025){
-  p = calc.bin.prob.GPD(theta.vec, lambda.vec)
+simBinaryCorr.GPD<- function (GPD.theta.vec, GPD.lambda.vec, CorrMat, no.rows, steps = 0.025){
+  p = calc.bin.prob.GPD(GPD.theta.vec, GPD.lambda.vec)
   pvec = p$p
   prop= p$prop
   Mlocation = p$Mlocation
-  n.variable = length(theta.vec)
+  n.variable = length(GPD.theta.vec)
   pair.combn = combn(n.variable, 2)
   n.corr = ncol(pair.combn)
   intermat.vec <- c()

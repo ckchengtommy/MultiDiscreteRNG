@@ -8,12 +8,13 @@ Authors@R: c(person(given = "Chak Kwong (Tommy)",
                         role = c("aut", "cre")),
                  person(given = "Hakan",
                         family = "Demirtas",
+                        email  = "demirtas@uic.edu",
                         role = "aut"))
 Author: Chak Kwong (Tommy) Cheng [aut, cre],
   Hakan Demirtas  [aut]
 Maintainer: Chak Kwong (Tommy) Cheng <ccheng46@uic.edu>
 Description: Generation of multivariate correlated discrete data with generalized Poisson, negative ninomial and binomial marginal distributions.
-License: GPL (>= 2)
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports:
@@ -25,6 +26,4 @@ Imports:
 URL: https://github.com/ckchengtommy/MultiDiscreteRNG
 BugReports: https://github.com/ckchengtommy/MultiDiscreteRNG/issues
 RoxygenNote: 7.3.2
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
+

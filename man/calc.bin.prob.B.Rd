@@ -2,20 +2,27 @@
 % Please edit documentation in R/calc.bin.prob.B.R
 \name{calc.bin.prob.B}
 \alias{calc.bin.prob.B}
-\title{This function implements Step 1 of the algorithm.
-It collapses the discrete outcome to binary ones for each variable.}
+\title{Collapse binomial data outcomes to binary variable}
 \usage{
-calc.bin.prob.B(n.vec, p.vec)
+calc.bin.prob.B(B.n.vec, B.prob.vec)
 }
 \arguments{
-\item{n.vec}{vector of number of trials}
+\item{B.n.vec}{Numeric vector of trial counts for each variable}
 
-\item{p.vec}{vector of probabilities}
+\item{B.prob.vec}{Numeric vector of success probabilities for each variable}
 }
 \value{
-vector of binary probability, dichotomous threshold
+A list containing the binary probability vector, the list of binomial probability mass functions for each variable, and the corresponding threshold indices
 }
 \description{
-This function implements Step 1 of the algorithm.
-It collapses the discrete outcome to binary ones for each variable.
+This function computes the binary probability and identifies a threshold
+to split discrete binomial outcomes. It summarizes each binomial distribution by
+providing the probability mass function, the probability of exceeding a median-based threshold,
+and the location of the threshold for the binary split.
+}
+\examples{
+B.n.vec <- c(3, 4, 5)
+B.prob.vec <- c(0.5, 0.5, 0.5)
+p <- calc.bin.prob.B(B.n.vec, B.prob.vec)
+
 }

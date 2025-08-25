@@ -4,12 +4,12 @@
 \alias{validation.GPDparameters}
 \title{Validate if the input GPD parameters are within feasible range}
 \usage{
-validation.GPDparameters(theta.vec, lambda.vec)
+validation.GPDparameters(GPD.theta.vec, GPD.lambda.vec)
 }
 \arguments{
-\item{theta.vec}{Vector of theta values}
+\item{GPD.theta.vec}{Vector of theta values}
 
-\item{lambda.vec}{Vector of lambda values}
+\item{GPD.lambda.vec}{Vector of lambda values}
 }
 \value{
 No return values; called it to check parameter inputs
@@ -18,5 +18,5 @@ No return values; called it to check parameter inputs
 This function returns the sum of two numbers.
 }
 \examples{
-validation.GPDparameters(theta.vec = c(3, 2), lambda.vec = c(0.4, 0.2))
+validation.GPDparameters(GPD.theta.vec = c(3, 2), GPD.lambda.vec = c(0.4, 0.2))
 }

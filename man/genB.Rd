@@ -2,7 +2,7 @@
 % Please edit documentation in R/genB.R
 \name{genB}
 \alias{genB}
-\title{This function generates multivariate Binomial data}
+\title{Generates multivariate binomial data from binary parameters}
 \usage{
 genB(no.rows, binObj)
 }
@@ -15,5 +15,5 @@ genB(no.rows, binObj)
 generated Binomial data with user's specifications
 }
 \description{
-This function generates multivariate Binomial data
+Generates multivariate binomial data from binary parameters
 }

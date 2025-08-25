@@ -1,4 +1,9 @@
-#' Check positive definiteness of the intermediate matrix
+#' Compute the tetrachoric correlation matrix for a multivariate standard normal distribution
+#'
+#' This function calculates the intermediate correlation matrix of a multivariate
+#' standard normal distribution in Step 2 of the algorithm. If the resulting matrix
+#' is not positive definite, the nearest positive definite matrix is returned and
+#' a warning is issued.
 #'
 #' @importFrom Matrix nearPD
 #' @importFrom GenOrd corrcheck
@@ -9,14 +14,19 @@
 #' @param maxit maximum iterations of the algorithm to correct PD matrix
 #' @param epsilon tolerance of the algorithm convergence
 #' @param support a list of \eqn{k} elements, where \eqn{k} is the number of variables. The \eqn{i}-th element of \code{support} is the vector containing the ordered values of the support of the \eqn{i}-th variable. By default, the support of the \eqn{i}-th variable is \eqn{1,2,...,k_i}
+#' @references Ferrari and Barbiero 2012 (<https://doi.org/10.1080/00273171.2012.692630>)
 #' @return No return values; called it to check parameter inputs
+#' @examples
+#' prop.vec.bin = c(0.5037236, 0.5034147)
+#' cor.mat = matrix(c(1, 0.3, 0.3, 1), nrow = 2, byrow = TRUE)
+#' InterMVN_Sigma = discrete_cont(marginal = prop.vec.bin, Sigma = cor.mat)$SigmaC
+#'
 #' @export
 
 
 discrete_cont <- function (marginal, Sigma, support = list(), Spearman = FALSE,
                             epsilon = 1e-06, maxit = 100)
 {
-  #browser()
   if (!all(unlist(lapply(marginal, function(x) (sort(x) ==
                                                 x & min(x) > 0 & max(x) < 1)))))
     stop("Error in assigning marginal distributions!")

@@ -2,7 +2,7 @@
 % Please edit documentation in R/discrete_cont.R
 \name{discrete_cont}
 \alias{discrete_cont}
-\title{Check positive definiteness of the intermediate matrix}
+\title{Compute the tetrachoric correlation matrix for a multivariate standard normal distribution}
 \usage{
 discrete_cont(
   marginal,
@@ -31,5 +31,17 @@ The \eqn{i}-th element of \code{marginal} is the vector of the cumulative probab
 No return values; called it to check parameter inputs
 }
 \description{
-Check positive definiteness of the intermediate matrix
+This function calculates the intermediate correlation matrix of a multivariate
+standard normal distribution in Step 2 of the algorithm. If the resulting matrix
+is not positive definite, the nearest positive definite matrix is returned and
+a warning is issued.
+}
+\examples{
+prop.vec.bin = c(0.5037236, 0.5034147)
+cor.mat = matrix(c(1, 0.3, 0.3, 1), nrow = 2, byrow = TRUE)
+InterMVN_Sigma = discrete_cont(marginal = prop.vec.bin, Sigma = cor.mat)$SigmaC
+
+}
+\references{
+Ferrari and Barbiero 2012 (<https://doi.org/10.1080/00273171.2012.692630>)
 }

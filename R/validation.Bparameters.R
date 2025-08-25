@@ -2,20 +2,20 @@
 #'
 #' This function returns the sum of two numbers.
 #'
-#' @param n.vec Vector of number of trials
-#' @param p.vec Vector of probability
+#' @param B.n.vec Vector of number of trials
+#' @param B.prob.vec Vector of probability
 #' @return No return values; called it to check parameter inputs
 #' @examples
-#' validation.Bparameters(n.vec = c(10, 15), p.vec = c(0.4, 0.2))
+#' validation.Bparameters(B.n.vec = c(10, 15), B.prob.vec = c(0.4, 0.2))
 #' @export
 
 
-validation.Bparameters <- function(n.vec, p.vec)
+validation.Bparameters <- function(B.n.vec, B.prob.vec)
 {
-  n.vec <- floor(n.vec)
-  w1 = n.vec <0
-  w2 = p.vec <0
-  w3 = p.vec >1
+  B.n.vec <- floor(B.n.vec)
+  w1 = B.n.vec <0
+  w2 = B.prob.vec <0
+  w3 = B.prob.vec >1
 
   if(sum(w1)>0){
     stop("Number of trials must be greater than 0")

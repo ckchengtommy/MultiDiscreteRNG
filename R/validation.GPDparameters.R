@@ -2,18 +2,18 @@
 #'
 #' This function returns the sum of two numbers.
 #'
-#' @param theta.vec Vector of theta values
-#' @param lambda.vec Vector of lambda values
+#' @param GPD.theta.vec Vector of theta values
+#' @param GPD.lambda.vec Vector of lambda values
 #' @return No return values; called it to check parameter inputs
 #' @examples
-#' validation.GPDparameters(theta.vec = c(3, 2), lambda.vec = c(0.4, 0.2))
+#' validation.GPDparameters(GPD.theta.vec = c(3, 2), GPD.lambda.vec = c(0.4, 0.2))
 #' @export
 
-validation.GPDparameters <- function(theta.vec, lambda.vec)
+validation.GPDparameters <- function(GPD.theta.vec, GPD.lambda.vec)
 {
-  w1 = theta.vec <0
-  w2 = lambda.vec >=1
-  w3 = lambda.vec < 0 & lambda.vec < (-theta.vec)/4
+  w1 = GPD.theta.vec <0
+  w2 = GPD.lambda.vec >=1
+  w3 = GPD.lambda.vec < 0 & GPD.lambda.vec < (-GPD.theta.vec)/4
 
   if(sum(w1)>0){
     stop("theta has to be greater than 0!")

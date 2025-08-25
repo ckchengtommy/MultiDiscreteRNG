@@ -4,12 +4,12 @@
 \alias{validation.NBparameters}
 \title{Validate if the input NB parameters are within feasible range}
 \usage{
-validation.NBparameters(r.vec, prob.vec)
+validation.NBparameters(NB.r.vec, NB.prob.vec)
 }
 \arguments{
-\item{r.vec}{Vector of number of trials parameters}
+\item{NB.r.vec}{Vector of number of trials parameters}
 
-\item{prob.vec}{Vector of probabilities}
+\item{NB.prob.vec}{Vector of probabilities}
 }
 \value{
 No return values; called it to check parameter inputs
@@ -18,5 +18,5 @@ No return values; called it to check parameter inputs
 Validate if the input NB parameters are within feasible range
 }
 \examples{
-validation.NBparameters(r.vec = c(10, 15), prob.vec = c(0.7, 0.5))
+validation.NBparameters(NB.r.vec = c(10, 15), NB.prob.vec = c(0.7, 0.5))
 }

@@ -5,12 +5,18 @@
 \title{This function implements Step 2 of the algorithm
 It calculates the intermediate binary correlations.}
 \usage{
-simBinaryCorr.GPD(theta.vec, lambda.vec, CorrMat, no.rows, steps = 0.025)
+simBinaryCorr.GPD(
+  GPD.theta.vec,
+  GPD.lambda.vec,
+  CorrMat,
+  no.rows,
+  steps = 0.025
+)
 }
 \arguments{
-\item{theta.vec}{vector of theta values}
+\item{GPD.theta.vec}{vector of theta values}
 
-\item{lambda.vec}{vector of lambda values}
+\item{GPD.lambda.vec}{vector of lambda values}
 
 \item{CorrMat}{specified Correlation matrix}
 

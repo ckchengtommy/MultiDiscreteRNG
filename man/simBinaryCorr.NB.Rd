@@ -5,12 +5,12 @@
 \title{This function implements Step 2 of the algorithm
 It calculates the intermediate binary correlations.}
 \usage{
-simBinaryCorr.NB(r.vec, prob.vec, CorrMat, no.rows, steps = 0.025)
+simBinaryCorr.NB(NB.r.vec, NB.prob.vec, CorrMat, no.rows, steps = 0.025)
 }
 \arguments{
-\item{r.vec}{vector of number of trials}
+\item{NB.r.vec}{vector of number of trials}
 
-\item{prob.vec}{vector of probabilities}
+\item{NB.prob.vec}{vector of probabilities}
 
 \item{CorrMat}{specified correlation matrix}
 

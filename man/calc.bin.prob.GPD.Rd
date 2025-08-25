@@ -2,20 +2,31 @@
 % Please edit documentation in R/calc.bin.prob.GPD.R
 \name{calc.bin.prob.GPD}
 \alias{calc.bin.prob.GPD}
-\title{This function implements Step 1 of the algorithm.
-It collapses the discrete outcome to binary ones for each variable.}
+\title{Collapse discrete generalized Poisson outcomes to binary variables}
 \usage{
-calc.bin.prob.GPD(theta.vec, lambda.vec)
+calc.bin.prob.GPD(GPD.theta.vec, GPD.lambda.vec)
 }
 \arguments{
-\item{theta.vec}{vector of theta values}
+\item{GPD.theta.vec}{Numeric vector of GPD theta parameters.}
 
-\item{lambda.vec}{vector of lambda values}
+\item{GPD.lambda.vec}{Numeric vector of GPD lambda parameters.}
 }
 \value{
-vector of binary probability, dichotomous threshold
+A list containing the binary probability vector, the list of GPD probability mass functions
+  for each variable, and the corresponding threshold indices.
 }
 \description{
-This function implements Step 1 of the algorithm.
-It collapses the discrete outcome to binary ones for each variable.
+This function implements Step 1 of the algorithm. It collapses each discrete
+outcome from the generalized Poisson distribution (GPD) into a binary
+probability and determines a dichotomous threshold for each variable.
+}
+\examples{
+# Prepare three GPD parameter vectors
+GPD.lambda.vec <- c(0.1, 0.2, 0.3)
+GPD.theta.vec  <- c(7, 0.7, 40)
+
+# Compute binary probabilities, PMFs, and thresholds
+p <- calc.bin.prob.GPD(GPD.theta.vec, GPD.lambda.vec)
+
+
 }
