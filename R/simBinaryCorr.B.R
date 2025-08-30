@@ -13,7 +13,7 @@
 #'
 #'
 simBinaryCorr.B<- function (B.n.vec, B.prob.vec, CorrMat, no.rows, steps = 0.025){
-  browser()
+  #browser()
   p = calc.bin.prob.B(B.n.vec, B.prob.vec)
   pvec = p$p
   prop= p$prop
