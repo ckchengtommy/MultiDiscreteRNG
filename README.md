@@ -1,6 +1,6 @@
 ## Overview
 
-The R package MultiDiscreteRNG implements the algorithm of the paper in Generation of Multivariate Discrete Data with generalized Poisson, negative binomial and binomial marginal distributions.
+The R package MultiDiscreteRNG implements the algorithm of the paper in Generation of Multivariate Discrete Data with generalized Poisson, negative binomial and binomial marginal distributions: https://arxiv.org/abs/2602.07707
 
 ## Installation
 
