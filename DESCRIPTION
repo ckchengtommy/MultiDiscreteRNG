@@ -11,7 +11,7 @@ Authors@R: c(person(given = "Chak Kwong (Tommy)",
                         email  = "demirtas@uic.edu",
                         role = "aut"))
 Maintainer: Chak Kwong (Tommy) Cheng <ccheng46@uic.edu>
-Description: Generate Multivariate Discrete Data with Generalized Poisson, Negative Binomial and Binomial Marginal Distributions Described in Cheng and Demirtas (2026) <arXiv:2602.07707>.
+Description: Generate multivariate discrete data with generalized Poisson, negative binomial and binomial marginal distributions using user-specified distribution parameters and a target correlation matrix. The details of the method are described in Cheng and Demirtas (2026) <arXiv:2602.07707>.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

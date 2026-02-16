@@ -36,7 +36,8 @@
 #'
 #' # In real data simulation, no.rows should set to 100000 for accurate data generation
 #' # in the intermediate step.
-#' binObj = simBinaryCorr.NB(NB.r.vec = r.vec, NB.prob.vec = p.vec, CorrMat = cmat, no.rows = 300, steps= 0.025)
+#' binObj = simBinaryCorr.NB(NB.r.vec = r.vec, NB.prob.vec = p.vec, CorrMat = cmat,
+#' no.rows = 300, steps= 0.025)
 #'
 #' data = genNB(no.rows = 100, binObj = binObj)$y
 #'

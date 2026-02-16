@@ -27,8 +27,10 @@
 #' N[lower.tri(N)] <- M
 #' cmat<- N + t(N)
 #' diag(cmat) <- 1
-#' #In real data simulation, no.rows should set to 100000 for accurate data generation in the intermediate step
-#' binObj = simBinaryCorr.B(B.n.vec = n.vec, B.prob.vec = p.vec, CorrMat = cmat, no.rows = 400, steps= 0.025)
+#' # In real data simulation, no.rows should set to 100000 for accurate data
+#' # generation in the intermediate step
+#' binObj = simBinaryCorr.B(B.n.vec = n.vec, B.prob.vec = p.vec, CorrMat = cmat,
+#' no.rows = 400, steps= 0.025)
 #'
 #'
 simBinaryCorr.B<- function (B.n.vec, B.prob.vec, CorrMat, no.rows, steps = 0.025){

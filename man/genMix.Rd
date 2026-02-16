@@ -51,7 +51,6 @@ N[lower.tri(N)] <- M
 cmat<- N + t(N)
 diag(cmat) <- 1
 
-
 # In real data simulation, no.rows should set to 100000 for accurate data generation
 # in the intermediate step.
 binObj <- simBinaryCorr.Mix(GPD.theta.vec = GPD.theta, GPD.lambda.vec = GPD.lambda,
