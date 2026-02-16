@@ -4,10 +4,19 @@ The R package MultiDiscreteRNG implements the algorithm of the paper in Generati
 
 ## Installation
 
+You can install the development verison from [Github](https://github.com/) with: 
+
 ``` r
 devtools::install_github("ckchengtommy/MultiDiscreteRNG", force = TRUE)
 library(MultiDiscreteRNG)
 ```
+
+You can also get the official release version from CRAN
+
+``` r 
+install.packages("MultiDiscreteRNG")
+```
+
 
 ## Example 1: Trivariate Generalized Poisson Distribution
 

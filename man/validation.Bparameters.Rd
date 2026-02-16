@@ -2,7 +2,7 @@
 % Please edit documentation in R/validation.Bparameters.R
 \name{validation.Bparameters}
 \alias{validation.Bparameters}
-\title{Validate if the input Binomial parameters are within feasible range}
+\title{Validate binomial parameters are within feasible ranges}
 \usage{
 validation.Bparameters(B.n.vec, B.prob.vec)
 }
@@ -15,7 +15,9 @@ validation.Bparameters(B.n.vec, B.prob.vec)
 No return values; called it to check parameter inputs
 }
 \description{
-This function returns the sum of two numbers.
+This helper function checks that binomial inputs are valid before downstream
+probability calculations and data generation. If any check fails, the function stops
+with an informative error message.
 }
 \examples{
 validation.Bparameters(B.n.vec = c(10, 15), B.prob.vec = c(0.4, 0.2))

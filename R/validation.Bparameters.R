@@ -1,6 +1,8 @@
-#' Validate if the input Binomial parameters are within feasible range
+#' Validate binomial parameters are within feasible ranges
 #'
-#' This function returns the sum of two numbers.
+#' This helper function checks that binomial inputs are valid before downstream
+#' probability calculations and data generation. If any check fails, the function stops
+#' with an informative error message.
 #'
 #' @param B.n.vec Vector of number of trials
 #' @param B.prob.vec Vector of probability

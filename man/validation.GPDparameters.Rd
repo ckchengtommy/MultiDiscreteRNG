@@ -2,7 +2,7 @@
 % Please edit documentation in R/validation.GPDparameters.R
 \name{validation.GPDparameters}
 \alias{validation.GPDparameters}
-\title{Validate if the input GPD parameters are within feasible range}
+\title{Validate generalized Poisson parameters are within feasible ranges}
 \usage{
 validation.GPDparameters(GPD.theta.vec, GPD.lambda.vec)
 }
@@ -15,7 +15,9 @@ validation.GPDparameters(GPD.theta.vec, GPD.lambda.vec)
 No return values; called it to check parameter inputs
 }
 \description{
-This function returns the sum of two numbers.
+This helper function checks that generalized Poisson (GPD) inputs are valid before
+downstream probability calculations and data generation. If any check fails, the
+function stops with an informative error message.
 }
 \examples{
 validation.GPDparameters(GPD.theta.vec = c(3, 2), GPD.lambda.vec = c(0.4, 0.2))

@@ -7,17 +7,25 @@
 GetGpoisPMF(p, theta, lambda, details = FALSE)
 }
 \arguments{
-\item{p}{Probability parameter for the generalized Poisson distribution.}
+\item{p}{Probability level(s) used to determine how far to compute the support (the PMF is
+generated until the CDF exceeds \code{max(p)}).}
 
 \item{theta}{Theta parameter(s) for the generalized Poisson distribution.}
 
 \item{lambda}{Lambda parameter(s) for the generalized Poisson distribution.}
 
-\item{details}{Logical; if TRUE, additional computation information is returned.}
+\item{details}{Logical; if TRUE, additional computation information is printed.}
 }
 \value{
-A table containing the probability mass function.
+A named numeric vector containing the generalized Poisson PMF values over the computed
+  support (names correspond to support points \eqn{x = 0,1,2,\dots}). Very small probabilities
+  (below \code{1e-10}) are removed.
 }
 \description{
-This function returns a table of the probability mass function of generalized Poisson distribution
+This function returns a table of the probability mass function of generalized Poisson distribution.
+}
+\examples{
+# PMF values computed until the CDF exceeds p = 1
+gpd_pmf <- GetGpoisPMF(p = 1, theta = 0.2, lambda = 0.3)
+gpd_pmf
 }

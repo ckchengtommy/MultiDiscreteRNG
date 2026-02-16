@@ -1,12 +1,19 @@
 #' Get probability mass function of generalized Poisson distribution
 #'
-#' This function returns a table of the probability mass function of generalized Poisson distribution
+#' This function returns a table of the probability mass function of generalized Poisson distribution.
 #'
-#' @param p Probability parameter for the generalized Poisson distribution.
+#' @param p Probability level(s) used to determine how far to compute the support (the PMF is
+#'   generated until the CDF exceeds \code{max(p)}).
 #' @param theta Theta parameter(s) for the generalized Poisson distribution.
 #' @param lambda Lambda parameter(s) for the generalized Poisson distribution.
-#' @param details Logical; if TRUE, additional computation information is returned.
-#' @return A table containing the probability mass function.
+#' @param details Logical; if TRUE, additional computation information is printed.
+#' @return A named numeric vector containing the generalized Poisson PMF values over the computed
+#'   support (names correspond to support points \eqn{x = 0,1,2,\dots}). Very small probabilities
+#'   (below \code{1e-10}) are removed.
+#' @examples
+#' # PMF values computed until the CDF exceeds p = 1
+#' gpd_pmf <- GetGpoisPMF(p = 1, theta = 0.2, lambda = 0.3)
+#' gpd_pmf
 #' @export
 
 

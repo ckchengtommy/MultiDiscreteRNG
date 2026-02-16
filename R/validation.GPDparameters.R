@@ -1,6 +1,8 @@
-#' Validate if the input GPD parameters are within feasible range
+#' Validate generalized Poisson parameters are within feasible ranges
 #'
-#' This function returns the sum of two numbers.
+#' This helper function checks that generalized Poisson (GPD) inputs are valid before
+#' downstream probability calculations and data generation. If any check fails, the
+#' function stops with an informative error message.
 #'
 #' @param GPD.theta.vec Vector of theta values
 #' @param GPD.lambda.vec Vector of lambda values

@@ -2,8 +2,7 @@
 % Please edit documentation in R/simBinaryCorr.GPD.R
 \name{simBinaryCorr.GPD}
 \alias{simBinaryCorr.GPD}
-\title{This function implements Step 2 of the algorithm
-It calculates the intermediate binary correlations.}
+\title{Compute intermediate binary correlations for multivariate generalized Poisson data}
 \usage{
 simBinaryCorr.GPD(
   GPD.theta.vec,
@@ -28,6 +27,34 @@ simBinaryCorr.GPD(
 intermediate multivariate binary Correlation matrix
 }
 \description{
-This function implements Step 2 of the algorithm
-It calculates the intermediate binary correlations.
+This function implements Step 2 of the algorithm to calibrate the intermediate
+latent-normal correlation matrix used to generate correlated binary
+variables for generalized Poisson (GPD) margins. For each pair of variables, it
+iteratively updates the latent correlation so that, after (i) generating correlated
+binary data via \code{generate.binaryVar} and (ii) mapping back to GPD outcomes via
+\code{BinToGPD}, the empirical correlation of the resulting GPD pair matches the
+user-specified target correlation in \code{CorrMat}. The calibrated pairwise latent
+correlations are then assembled into a full intermediate matrix, which is adjusted
+to be positive definite if needed.
+}
+\examples{
+lambda.vec <- c(0.1, 0.2, 0.3)
+theta.vec  <- c(7, 3, 4)
+
+# Construct a 3x3 target correlation matrix
+M <- c(0.3, 0.3, 0.3)
+N <- diag(3)
+N[lower.tri(N)] <- M
+cmat <- N + t(N)
+diag(cmat) <- 1
+
+# In real-data simulation, no.rows is often set to 100000 in this intermediate step
+# for more accurate calibration.
+binObj <- simBinaryCorr.GPD(
+  GPD.theta.vec  = theta.vec,
+  GPD.lambda.vec = lambda.vec,
+  CorrMat        = cmat,
+  no.rows        = 200,
+  steps          = 0.025
+)
 }

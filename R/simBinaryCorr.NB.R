@@ -1,5 +1,14 @@
-#' This function implements Step 2 of the algorithm
-#' It calculates the intermediate binary correlations.
+#' Compute intermediate binary correlations for multivariate negative binomial data
+#'
+#' This function implements Step 2 of the algorithm to calibrate the intermediate
+#' latent-normal correlation matrix used to generate correlated binary
+#' variables for negative binomial margins. For each pair of variables, it iteratively
+#' updates the latent correlation so that, after (i) generating correlated binary data
+#' via \code{generate.binaryVar} and (ii) mapping back to negative binomial outcomes via
+#' \code{BinToNB}, the empirical correlation of the resulting NB pair matches the
+#' user-specified target correlation in \code{CorrMat}. The calibrated pairwise latent
+#' correlations are then assembled into a full intermediate matrix, which is adjusted
+#' to be positive definite if needed.
 #'
 #' @importFrom utils combn
 #' @importFrom matrixcalc is.positive.definite
@@ -10,7 +19,21 @@
 #' @param steps fraction of difference between the current and target matrix to be added in each iteration.
 #' @return intermediate multivariate binary Correlation matrix
 #' @export
+#' @examples
+#' r.vec <- c(3, 4, 5)
+#' p.vec <- c(0.7, 0.5, 0.5)
 #'
+#' M<- c(0.3, 0.2, 0.3)
+#' N <- diag(3)
+#' N[lower.tri(N)] <- M
+#' cmat<- N + t(N)
+#' diag(cmat) <- 1
+#'
+#' # In real data simulation, no.rows should set to 100000 for accurate data generation
+#' # in the intermediate step.
+#' binObj = simBinaryCorr.NB(NB.r.vec = r.vec, NB.prob.vec = p.vec, CorrMat = cmat, no.rows = 200, steps= 0.025)
+
+
 simBinaryCorr.NB<- function (NB.r.vec, NB.prob.vec, CorrMat, no.rows, steps = 0.025){
   p = calc.bin.prob.NB(NB.r.vec, NB.prob.vec)
   pvec = p$p

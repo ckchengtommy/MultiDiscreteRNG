@@ -1,5 +1,4 @@
-#' Validate if the input NB parameters are within feasible range
-#'
+#' Validate if the input negative binomial parameters are within feasible range
 #'
 #' @param NB.r.vec Vector of number of trials parameters
 #' @param NB.prob.vec Vector of probabilities

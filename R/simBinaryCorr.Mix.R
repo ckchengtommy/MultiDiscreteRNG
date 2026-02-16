@@ -1,9 +1,15 @@
-#' Calculate Intermediate Binary Correlations for Mixed Variables
+#' Calculate intermediate binary correlations for mixed data
 #'
-#' This function computes intermediate binary correlations to generate a mixture of
-#' Generalized Poisson (GPD), Negative Binomial (NB), and Binomial (B) variables with
-#' a specified target correlation structure. It iteratively adjusts pairwise correlations
-#' in binary space to approximate the desired correlation matrix for the mixed variables.
+#' This function implements Step 2 of the algorithm to calibrate the intermediate
+#' latent-normal correlation matrix used to generate correlated binary
+#' variables for a mixture of generalized Poisson (GPD), negative binomial (NB), and
+#' binomial (B) margins. For each pair of variables, it iteratively updates the
+#' latent correlation so that, after (i) generating correlated binary data via
+#' \code{generate.binaryVar} and (ii) mapping back to the mixed discrete scales via via \code{BinToMix},
+#' the empirical correlation of the resulting mixed pair matches
+#' the user-specified target correlation in \code{CorrMat}. The calibrated pairwise
+#' latent correlations are then assembled into a full intermediate matrix, which is
+#' adjusted to be positive definite if needed (via \code{Matrix::nearPD}).
 #'
 #' @param GPD.theta.vec Numeric vector of theta parameters for GPD variables (or `NULL` if none).
 #' @param GPD.lambda.vec Numeric vector of lambda parameters for GPD variables (must match length of `GPD.theta.vec`).
@@ -29,29 +35,29 @@
 #'
 #'
 #' @examples
-#' \dontrun{
-#' # Example with 2 GPD, 1 NB, and 1 Binomial variable
-#' GPD.theta <- c(1, 2)
-#' GPD.lambda <- c(0.5, 0.3)
+#' #Define parameters
+#' GPD.theta <- 2
+#' GPD.lambda <- 0.3
 #' NB.r <- 10
 #' NB.prob <- 0.2
 #' B.n <- 5
 #' B.prob <- 0.5
-#' CorrMat <- matrix(c(1, 0.3, 0.2, 0.1,
-#'                    0.3, 1, 0.4, 0.2,
-#'                    0.2, 0.4, 1, 0.3,
-#'                    0.1, 0.2, 0.3, 1), 4, 4)
-#' result <- simBinaryCorr.Mix(
-#'   GPD.theta.vec = GPD.theta,
-#'   GPD.lambda.vec = GPD.lambda,
-#'   NB.r.vec = NB.r,
-#'   NB.prob.vec = NB.prob,
-#'   B.n.vec = B.n,
-#'   B.prob.vec = B.prob,
-#'   CorrMat = CorrMat,
-#'   no.rows = 1000
-#' )
-#' }
+#'
+#'
+#' #Define Correlation Matrix
+#' M<- c(0.3, 0.3, 0.3)
+#' N <- diag(3)
+#' N[lower.tri(N)] <- M
+#' cmat<- N + t(N)
+#' diag(cmat) <- 1
+#'
+#'
+#' # In real data simulation, no.rows should set to 100000 for accurate data generation
+#' # in the intermediate step.
+#' binObj <- simBinaryCorr.Mix(GPD.theta.vec = GPD.theta, GPD.lambda.vec = GPD.lambda,
+#'   NB.r.vec = NB.r, NB.prob.vec = NB.prob,
+#'   B.n.vec = B.n, B.prob.vec = B.prob,
+#'   CorrMat = cmat, no.rows = 300)
 #'
 #' @importFrom Matrix nearPD
 #' @export

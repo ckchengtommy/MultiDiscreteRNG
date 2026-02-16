@@ -2,7 +2,7 @@
 % Please edit documentation in R/QuantileGpois.R
 \name{QuantileGpois}
 \alias{QuantileGpois}
-\title{This function computes the quantile of Generalized Poisson}
+\title{Compute the quantile function of the generalized Poisson distribution}
 \usage{
 QuantileGpois(p, theta, lambda, details = FALSE)
 }
@@ -16,8 +16,15 @@ QuantileGpois(p, theta, lambda, details = FALSE)
 \item{details}{A logical flag to return the computational details}
 }
 \value{
-the quantile of GPD
+An integer vector of generalized Poisson quantiles corresponding to \code{p}.
 }
 \description{
-This function computes the quantile of Generalized Poisson
+This function evaluates the generalized Poisson quantile \eqn{Q(p)} by
+incrementally constructing the PMF and CDF from \eqn{x=0} upward until the
+CDF exceeds the largest requested probability in \code{p}. The returned
+quantile(s) are the smallest integer \eqn{x} such that \eqn{P(X \le x) \ge p}.
+}
+\examples{
+QuantileGpois(p = 0.95, theta = 2, lambda = 0.1)
+
 }

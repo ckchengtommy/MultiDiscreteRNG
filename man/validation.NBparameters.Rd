@@ -2,7 +2,7 @@
 % Please edit documentation in R/validation.NBparameters.R
 \name{validation.NBparameters}
 \alias{validation.NBparameters}
-\title{Validate if the input NB parameters are within feasible range}
+\title{Validate if the input negative binomial parameters are within feasible range}
 \usage{
 validation.NBparameters(NB.r.vec, NB.prob.vec)
 }
@@ -15,7 +15,7 @@ validation.NBparameters(NB.r.vec, NB.prob.vec)
 No return values; called it to check parameter inputs
 }
 \description{
-Validate if the input NB parameters are within feasible range
+Validate if the input negative binomial parameters are within feasible range
 }
 \examples{
 validation.NBparameters(NB.r.vec = c(10, 15), NB.prob.vec = c(0.7, 0.5))
