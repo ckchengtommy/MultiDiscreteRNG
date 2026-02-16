@@ -5,11 +5,13 @@ Version: 0.1.0
 Authors@R: c(person(given = "Chak Kwong (Tommy)",
                         family = "Cheng",
                         email  = "ccheng46@uic.edu",
-                        role = c("aut", "cre", "cph")),
-                 person(given = "Hakan",
+                        role = c("aut", "cre", "cph"), 
+                        comment = c(ORCID = "0009-0009-9395-5474")), 
+            person(given = "Hakan",
                         family = "Demirtas",
                         email  = "demirtas@uic.edu",
-                        role = "aut"))
+                        role = "aut", 
+                        comment = c(ORCID = "0000-0003-2482-703X")))
 Maintainer: Chak Kwong (Tommy) Cheng <ccheng46@uic.edu>
 Description: Generate multivariate discrete data with generalized Poisson, negative binomial and binomial marginal distributions using user-specified distribution parameters and a target correlation matrix. The details of the method are described in Cheng and Demirtas (2026) <arXiv:2602.07707>.
 License: GPL-3
