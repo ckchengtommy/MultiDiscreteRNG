@@ -59,8 +59,8 @@ simBinaryCorr.B<- function (B.n.vec, B.prob.vec, CorrMat, no.rows, steps = 0.025
     cat("calculating the intermediate binary correlations pair Sigma", pair.temp , "\n")
     while (sum(change > 0.001) > 0) {
       iteration = iteration + 1
-      cat("iteration:", iteration, "\n")
-      cat("delta:", sum(change), "\n")
+      #cat("iteration:", iteration, "\n")
+      #cat("delta:", sum(change), "\n")
       inter_bin = generate.binaryVar(no.rows, pvec.pair, del.next)
       Mydata = BinToB(pvec.pair, prop.pair, Mlocation.pair, inter_bin)
 
@@ -70,7 +70,7 @@ simBinaryCorr.B<- function (B.n.vec, B.prob.vec, CorrMat, no.rows, steps = 0.025
       else {
         del.next = del.next + (CorrMat.pair - Mydata$Corr) * steps
       }
-      print(del.next)
+      #print(del.next)
       change = abs(CorrMat.pair - Mydata$Corr)
 
     }

@@ -100,8 +100,8 @@ simBinaryCorr.Mix = function(GPD.theta.vec=NULL, GPD.lambda.vec=NULL, NB.r.vec=N
     cat("calculating the intermediate binary correlations pair Sigma", pair.temp , "\n")
     while (sum(change > 0.001) > 0) {
       iteration = iteration + 1
-      cat("iteration:", iteration, "\n")
-      cat("delta:", sum(change), "\n")
+      #cat("iteration:", iteration, "\n")
+      #cat("delta:", sum(change), "\n")
       inter_bin = generate.binaryVar(no.rows, pvec.pair, del.next)
       Mydata = BinToGPD(pvec.pair, prop.pair, Mlocation.pair, inter_bin)
 
