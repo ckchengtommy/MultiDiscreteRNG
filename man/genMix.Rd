@@ -40,13 +40,11 @@ GPD.theta <- 2
 GPD.lambda <- 0.3
 NB.r <- 10
 NB.prob <- 0.2
-B.n <- 5
-B.prob <- 0.5
 
 
 #Define Correlation Matrix
-M<- c(0.3, 0.3, 0.3)
-N <- diag(3)
+M<- c(0.3, 0.3)
+N <- diag(2)
 N[lower.tri(N)] <- M
 cmat<- N + t(N)
 diag(cmat) <- 1
@@ -55,7 +53,6 @@ diag(cmat) <- 1
 # in the intermediate step.
 binObj <- simBinaryCorr.Mix(GPD.theta.vec = GPD.theta, GPD.lambda.vec = GPD.lambda,
   NB.r.vec = NB.r, NB.prob.vec = NB.prob,
-  B.n.vec = B.n, B.prob.vec = B.prob,
   CorrMat = cmat, no.rows = 250)
 
 MixData = genMix(no.rows = 100, binObj = binObj)$y

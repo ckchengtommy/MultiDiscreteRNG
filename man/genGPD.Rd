@@ -35,10 +35,10 @@ step implemented in \code{BinToGPD}, using the generalized Poisson probability m
 dichotomization locations stored in \code{binObj}.
 }
 \examples{
-lambda.vec <- c(0.1, 0.2, 0.3)
-theta.vec <- c(7, 3, 4)
-M<- c(0.3, 0.3, 0.3)
-N <- diag(3)
+lambda.vec <- c(0.1, 0.2)
+theta.vec <- c(7, 3)
+M<- c(0.3, 0.3)
+N <- diag(2)
 N[lower.tri(N)] <- M
 cmat<- N + t(N)
 diag(cmat) <- 1

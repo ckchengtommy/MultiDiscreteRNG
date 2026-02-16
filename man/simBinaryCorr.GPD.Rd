@@ -38,12 +38,12 @@ correlations are then assembled into a full intermediate matrix, which is adjust
 to be positive definite if needed.
 }
 \examples{
-lambda.vec <- c(0.1, 0.2, 0.3)
-theta.vec  <- c(7, 3, 4)
+lambda.vec <- c(0.1, 0.2)
+theta.vec  <- c(7, 3)
 
 # Construct a 3x3 target correlation matrix
-M <- c(0.3, 0.3, 0.3)
-N <- diag(3)
+M <- c(0.3, 0.3)
+N <- diag(2)
 N[lower.tri(N)] <- M
 cmat <- N + t(N)
 diag(cmat) <- 1

@@ -27,7 +27,7 @@
 #' Mlocation.pair <- Mloc[1:2]
 #' prop.pair      <- list(prop[[1]], prop[[2]])
 #'
-#' # Define a 2×2 target correlation matrix
+#' # Define a 2 by2 target correlation matrix
 #' del.next <- matrix(c(1.0, 0.3,
 #'                      0.3, 1.0),
 #'                    nrow = 2, byrow = TRUE)
@@ -35,7 +35,7 @@
 #' # Simulate 100 correlated binary observations
 #' inter_bin <- generate.binaryVar(100, pvec.pair, del.next)
 #'
-#' # Reconstruct the GPD‐scaled data
+#' # Reconstruct the GPD scaled data
 #' Mydata <- BinToGPD(pvec.pair, prop.pair, Mlocation.pair, inter_bin)
 #'
 #' @export

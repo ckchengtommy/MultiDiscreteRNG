@@ -26,7 +26,7 @@
 #' Mlocation.pair <- Mloc[1:2]
 #' prop.pair      <- list(prop[[1]], prop[[2]])
 #'
-#' # Define a 2×2 target correlation matrix
+#' # Define a 2 by 2 target correlation matrix
 #' del.next <- matrix(c(1.0, -0.3,
 #'                      -0.3, 1.0),
 #'                   nrow = 2, byrow = TRUE)

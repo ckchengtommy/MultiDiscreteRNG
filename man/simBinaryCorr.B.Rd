@@ -31,10 +31,10 @@ the resulting binomial pair matches the user-specified target correlation in
 full intermediate matrix, which is adjusted to be positive definite if needed.
 }
 \examples{
-n.vec <- c(3, 4, 5)
-p.vec <- c(0.5, 0.5, 0.5)
-M<- c(0.3, 0.4, 0.3)
-N <- diag(3)
+n.vec <- c(3, 4)
+p.vec <- c(0.5, 0.5)
+M<- c(0.3, 0.4)
+N <- diag(2)
 N[lower.tri(N)] <- M
 cmat<- N + t(N)
 diag(cmat) <- 1
