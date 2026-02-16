@@ -25,5 +25,7 @@ Imports:
     mvtnorm
 URL: https://github.com/ckchengtommy/MultiDiscreteRNG
 BugReports: https://github.com/ckchengtommy/MultiDiscreteRNG/issues
-RoxygenNote: 7.3.2
-
+RoxygenNote: 7.3.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
