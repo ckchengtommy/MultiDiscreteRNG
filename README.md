@@ -125,6 +125,6 @@ binObj = simBinaryCorr.Mix(GPD.theta.vec = GPD.theta, GPD.lambda.vec = GPD.lambd
 Lastly, generate the trivaiarte mixed distribution with n = 100 samples.
 
 ``` r
-GPD.data = genMix(no.rows = 100, binObj)$y
+Mix.data = genMix(no.rows = 100, binObj)$y
 ```
 
