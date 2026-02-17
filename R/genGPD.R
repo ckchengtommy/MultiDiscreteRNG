@@ -25,10 +25,10 @@
 #'   the simulated data matrix and its empirical correlation matrix).
 #'
 #' @examples
-#' lambda.vec <- c(0.1, 0.2, 0.3)
-#' theta.vec <- c(7, 0.7, 40)
+#' lambda.vec <- c(0.1, 0.05)
+#' theta.vec <- c(7, 12)
 #' M<- c(0.3, 0.3, 0.3)
-#' N <- diag(3)
+#' N <- diag(2)
 #' N[lower.tri(N)] <- M
 #' cmat<- N + t(N)
 #' diag(cmat) <- 1

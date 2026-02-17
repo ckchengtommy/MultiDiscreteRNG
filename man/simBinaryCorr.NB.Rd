@@ -32,11 +32,11 @@ correlations are then assembled into a full intermediate matrix, which is adjust
 to be positive definite if needed.
 }
 \examples{
-r.vec <- c(3, 4, 5)
-p.vec <- c(0.7, 0.5, 0.5)
+r.vec <- c(3, 5)
+p.vec <- c(0.7, 0.5)
 
-M<- c(0.45, 0.45, 0.45)
-N <- diag(3)
+M<- c(0.45, 0.45)
+N <- diag(2)
 N[lower.tri(N)] <- M
 cmat<- N + t(N)
 diag(cmat) <- 1

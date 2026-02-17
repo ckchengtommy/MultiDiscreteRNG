@@ -34,11 +34,11 @@ step implemented in \code{BinToB}, using the binomial probability mass function 
 locations stored in \code{binObj}
 }
 \examples{
-n.vec <- c(3, 4, 5)
-p.vec <- c(0.5, 0.5, 0.5)
+n.vec <- c(3, 4)
+p.vec <- c(0.5, 0.5)
 
-M<- c(0.3, 0.4, 0.3)
-N <- diag(3)
+M<- c(0.3, 0.4)
+N <- diag(2)
 N[lower.tri(N)] <- M
 cmat<- N + t(N)
 diag(cmat) <- 1

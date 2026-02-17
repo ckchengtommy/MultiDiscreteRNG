@@ -35,21 +35,18 @@ step implemented in \code{BinToMix}, using the component probability mass functi
 dichotomization locations stored in \code{binObj}.
 }
 \examples{
-GPD.theta = 0.12
-GPD.lambda = 0.03
+GPD.theta = 4
+GPD.lambda = 0.2
 NB.r = 15
 NB.prob = 0.42
-B.n = 20
-B.prob = 0.61
-M<- c(0.15, 0.2, 0.15)
-N <- diag(3)
+M<- c(0.15, 0.2)
+N <- diag(2)
 N[lower.tri(N)] <- M
 cmat<- N + t(N)
 diag(cmat) <- 1
 binObj = simBinaryCorr.Mix(GPD.theta.vec = GPD.theta, GPD.lambda.vec = GPD.lambda,
                            NB.r.vec = NB.r, NB.prob.vec = NB.prob,
-                           B.n.vec = B.n  , B.prob.vec = B.prob,
-                           cmat, 20000, steps= 0.025)
+                           CorrMat =cmat, no.rows = 20000, steps= 0.025)
 Mix.data = genMix(no.rows = 100, binObj)$y
 
 }

@@ -21,10 +21,10 @@
 #' @return intermediate multivariate binary Correlation matrix
 #' @export
 #' @examples
-#' lambda.vec <- c(0.1, 0.2, 0.3)
-#' theta.vec <- c(7, 0.7, 40)
-#' M<- c(0.3, 0.3, 0.3)
-#' N <- diag(3)
+#' lambda.vec <- c(0.1, 0.13)
+#' theta.vec <- c(7, 40)
+#' M<- c(0.3, 0.3)
+#' N <- diag(2)
 #' N[lower.tri(N)] <- M
 #' cmat<- N + t(N)
 #' diag(cmat) <- 1
