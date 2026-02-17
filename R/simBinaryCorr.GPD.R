@@ -21,14 +21,12 @@
 #' @return intermediate multivariate binary Correlation matrix
 #' @export
 #' @examples
-#' lambda.vec <- c(0.1, 0.2)
-#' theta.vec  <- c(7, 3)
-#'
-#' # Construct a 3x3 target correlation matrix
-#' M <- c(0.3, 0.3)
-#' N <- diag(2)
+#' lambda.vec <- c(0.1, 0.2, 0.3)
+#' theta.vec <- c(7, 0.7, 40)
+#' M<- c(0.3, 0.3, 0.3)
+#' N <- diag(3)
 #' N[lower.tri(N)] <- M
-#' cmat <- N + t(N)
+#' cmat<- N + t(N)
 #' diag(cmat) <- 1
 #'
 #' # In real-data simulation, no.rows is often set to 100000 in this intermediate step
@@ -37,9 +35,9 @@
 #'   GPD.theta.vec  = theta.vec,
 #'   GPD.lambda.vec = lambda.vec,
 #'   CorrMat        = cmat,
-#'   no.rows        = 200,
-#'   steps          = 0.025
-#' )
+#'   no.rows        = 20000,
+#'   steps          = 0.025)
+#'
 simBinaryCorr.GPD<- function (GPD.theta.vec, GPD.lambda.vec, CorrMat, no.rows, steps = 0.025){
   p = calc.bin.prob.GPD(GPD.theta.vec, GPD.lambda.vec)
   pvec = p$p
@@ -62,7 +60,7 @@ simBinaryCorr.GPD<- function (GPD.theta.vec, GPD.lambda.vec, CorrMat, no.rows, s
     prop.pair <- list(prop[[pair.temp[1]]], prop [[pair.temp[2]]])
     change = 1
     iteration = 0
-#    cat("calculating the intermediate binary correlations pair Sigma", pair.temp , "\n")
+    cat("calculating the intermediate binary correlations pair Sigma", pair.temp , "\n")
     while (sum(change > 0.001) > 0) {
       iteration = iteration + 1
       #cat("iteration:", iteration, "\n")
@@ -93,7 +91,7 @@ simBinaryCorr.GPD<- function (GPD.theta.vec, GPD.lambda.vec, CorrMat, no.rows, s
     intermat = (intermat + t(intermat))/2
   }
   l = is.positive.definite(del.next)
-  print(l == TRUE)
+  #print(l == TRUE)
   cat("\n required ", iteration.total, " iterations to calculate intermediate binary correlations. \n")
   return(list(GPDprop = prop, intermat = intermat, Mlocation = Mlocation, pvec = pvec))
 }

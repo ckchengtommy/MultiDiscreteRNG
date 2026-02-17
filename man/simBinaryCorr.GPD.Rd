@@ -38,14 +38,12 @@ correlations are then assembled into a full intermediate matrix, which is adjust
 to be positive definite if needed.
 }
 \examples{
-lambda.vec <- c(0.1, 0.2)
-theta.vec  <- c(7, 3)
-
-# Construct a 3x3 target correlation matrix
-M <- c(0.3, 0.3)
-N <- diag(2)
+lambda.vec <- c(0.1, 0.2, 0.3)
+theta.vec <- c(7, 0.7, 40)
+M<- c(0.3, 0.3, 0.3)
+N <- diag(3)
 N[lower.tri(N)] <- M
-cmat <- N + t(N)
+cmat<- N + t(N)
 diag(cmat) <- 1
 
 # In real-data simulation, no.rows is often set to 100000 in this intermediate step
@@ -54,7 +52,7 @@ binObj <- simBinaryCorr.GPD(
   GPD.theta.vec  = theta.vec,
   GPD.lambda.vec = lambda.vec,
   CorrMat        = cmat,
-  no.rows        = 200,
-  steps          = 0.025
-)
+  no.rows        = 20000,
+  steps          = 0.025)
+
 }

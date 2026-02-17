@@ -31,17 +31,18 @@ the resulting binomial pair matches the user-specified target correlation in
 full intermediate matrix, which is adjusted to be positive definite if needed.
 }
 \examples{
-n.vec <- c(3, 4)
-p.vec <- c(0.5, 0.5)
-M<- c(0.3, 0.4)
-N <- diag(2)
+n.vec <- c(3, 4, 5)
+p.vec <- c(0.5, 0.5, 0.5)
+
+M<- c(0.3, 0.4, 0.3)
+N <- diag(3)
 N[lower.tri(N)] <- M
 cmat<- N + t(N)
 diag(cmat) <- 1
 # In real data simulation, no.rows should set to 100000 for accurate data
 # generation in the intermediate step
 binObj = simBinaryCorr.B(B.n.vec = n.vec, B.prob.vec = p.vec, CorrMat = cmat,
-no.rows = 400, steps= 0.025)
+no.rows = 20000, steps= 0.025)
 
 
 }

@@ -20,11 +20,11 @@
 #' @return intermediate multivariate binary Correlation matrix
 #' @export
 #' @examples
-#' r.vec <- c(3, 4)
-#' p.vec <- c(0.7, 0.5)
+#' r.vec <- c(3, 4, 5)
+#' p.vec <- c(0.7, 0.5, 0.5)
 #'
-#' M<- c(0.3, 0.2)
-#' N <- diag(2)
+#' M<- c(0.45, 0.45, 0.45)
+#' N <- diag(3)
 #' N[lower.tri(N)] <- M
 #' cmat<- N + t(N)
 #' diag(cmat) <- 1
@@ -32,7 +32,7 @@
 #' # In real data simulation, no.rows should set to 100000 for accurate data generation
 #' # in the intermediate step.
 #' binObj = simBinaryCorr.NB(NB.r.vec = r.vec, NB.prob.vec = p.vec, CorrMat = cmat,
-#' no.rows = 200, steps= 0.025)
+#' no.rows = 20000, steps= 0.025)
 
 simBinaryCorr.NB<- function (NB.r.vec, NB.prob.vec, CorrMat, no.rows, steps = 0.025){
   p = calc.bin.prob.NB(NB.r.vec, NB.prob.vec)
@@ -87,7 +87,7 @@ simBinaryCorr.NB<- function (NB.r.vec, NB.prob.vec, CorrMat, no.rows, steps = 0.
     intermat = (intermat + t(intermat))/2
   }
   l = is.positive.definite(del.next)
-  print(l == TRUE)
+  #print(l == TRUE)
   cat("\n required ", iteration.total, " iterations to calculate intermediate binary correlations. \n")
   return(list(NBprop = prop, intermat = intermat, Mlocation = Mlocation, pvec = pvec))
 }

@@ -35,11 +35,11 @@ step implemented in \code{BinToNB}, using the negative binomial probability mass
 dichotomization locations stored in \code{binObj}.
 }
 \examples{
-r.vec <- c(3, 4)
-p.vec <- c(0.7, 0.5)
+r.vec <- c(3, 4, 5)
+p.vec <- c(0.7, 0.5, 0.5)
 
-M<- c(0.3, 0.2)
-N <- diag(2)
+M<- c(0.45, 0.45, 0.45)
+N <- diag(3)
 N[lower.tri(N)] <- M
 cmat<- N + t(N)
 diag(cmat) <- 1
@@ -47,7 +47,7 @@ diag(cmat) <- 1
 # In real data simulation, no.rows should set to 100000 for accurate data generation
 # in the intermediate step.
 binObj = simBinaryCorr.NB(NB.r.vec = r.vec, NB.prob.vec = p.vec, CorrMat = cmat,
-no.rows = 300, steps= 0.025)
+no.rows = 20000, steps= 0.025)
 
 data = genNB(no.rows = 100, binObj = binObj)$y
 

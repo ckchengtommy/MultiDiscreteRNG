@@ -35,10 +35,10 @@ step implemented in \code{BinToGPD}, using the generalized Poisson probability m
 dichotomization locations stored in \code{binObj}.
 }
 \examples{
-lambda.vec <- c(0.1, 0.2)
-theta.vec <- c(7, 3)
-M<- c(0.3, 0.3)
-N <- diag(2)
+lambda.vec <- c(0.1, 0.2, 0.3)
+theta.vec <- c(7, 0.7, 40)
+M<- c(0.3, 0.3, 0.3)
+N <- diag(3)
 N[lower.tri(N)] <- M
 cmat<- N + t(N)
 diag(cmat) <- 1
@@ -46,7 +46,7 @@ diag(cmat) <- 1
 # In real data simulation, no.rows should set to 100000 for accurate data generation
 # in the intermediate step.
 binObj = simBinaryCorr.GPD(GPD.theta.vec = theta.vec, GPD.lambda.vec = lambda.vec,
-                           CorrMat = cmat, no.rows = 200, steps= 0.025)
+                           CorrMat = cmat, no.rows = 20000, steps= 0.025)
 data = genGPD(no.rows = 100, binObj = binObj)$y
 
 }

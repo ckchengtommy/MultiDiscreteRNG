@@ -35,26 +35,21 @@
 #'
 #'
 #' @examples
-#' #Define parameters
-#' GPD.theta <- 2
-#' GPD.lambda <- 0.3
-#' NB.r <- 10
-#' NB.prob <- 0.2
-#'
-#'
-#' #Define Correlation Matrix
-#' M<- c(0.3, 0.3)
-#' N <- diag(2)
+#' GPD.theta = 0.12
+#' GPD.lambda = 0.03
+#' NB.r = 15
+#' NB.prob = 0.42
+#' B.n = 20
+#' B.prob = 0.61
+#' M<- c(0.15, 0.2, 0.15)
+#' N <- diag(3)
 #' N[lower.tri(N)] <- M
 #' cmat<- N + t(N)
 #' diag(cmat) <- 1
-#'
-#'
-#' # In real data simulation, no.rows should set to 100000 for accurate data generation
-#' # in the intermediate step.
-#' binObj <- simBinaryCorr.Mix(GPD.theta.vec = GPD.theta, GPD.lambda.vec = GPD.lambda,
-#'   NB.r.vec = NB.r, NB.prob.vec = NB.prob,
-#'   CorrMat = cmat, no.rows = 300)
+#' binObj = simBinaryCorr.Mix(GPD.theta.vec = GPD.theta, GPD.lambda.vec = GPD.lambda,
+#'                            NB.r.vec = NB.r, NB.prob.vec = NB.prob,
+#'                            B.n.vec = B.n  , B.prob.vec = B.prob,
+#'                            cmat, 20000, steps= 0.025)
 #'
 #' @importFrom Matrix nearPD
 #' @export
@@ -129,7 +124,7 @@ simBinaryCorr.Mix = function(GPD.theta.vec=NULL, GPD.lambda.vec=NULL, NB.r.vec=N
   }
 
   l = is.positive.definite(del.next)
-  print(l == TRUE)
+  #print(l == TRUE)
   cat("\n required ", iteration.total, " iterations to calculate intermediate binary correlations. \n")
   return(list(Mixprop = prop, intermat = intermat, Mlocation = Mlocation, pvec = pvec))
 }
