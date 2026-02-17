@@ -42,7 +42,7 @@ diag(cmat) <- 1
 Then we generate the intermediate correlation matrix with:
 
 ``` r
-binObj = simBinaryCorr.Mix(GPD.theta.vec, GPD.lambda.vec, cmat, 1000000, steps= 0.025)
+binObj = simBinaryCorr.Mix(GPD.theta.vec, GPD.lambda.vec, cmat, 100000, steps= 0.025)
 ```
 
 Lastly, generate the trivaiarte generalized Poisson distribution with n = 100 samples.
@@ -77,7 +77,7 @@ diag(cmat) <- 1
 Then we generate the intermediate correlation matrix with:
 
 ``` r
-binObj = simBinaryCorr.NB(NB.r.vec, NB.prob.vec, cmat, 1000000, steps= 0.025)
+binObj = simBinaryCorr.NB(NB.r.vec, NB.prob.vec, cmat, 100000, steps= 0.025)
 ```
 
 Lastly, generate the 4-variate negative binomial distribution with n = 100 samples:
@@ -119,7 +119,7 @@ Then we generate the intermediate correlation matrix with:
 binObj = simBinaryCorr.Mix(GPD.theta.vec = GPD.theta, GPD.lambda.vec = GPD.lambda, 
                            NB.r.vec = NB.r, NB.prob.vec = NB.prob, 
                            B.n.vec = B.n  , B.prob.vec = B.prob,
-                            cmat, 1000000, steps= 0.025)
+                            cmat, 100000, steps= 0.025)
 ```
 
 Lastly, generate the trivaiarte mixed distribution with n = 100 samples.
