@@ -42,7 +42,7 @@ QuantileGpois <- function (p, theta, lambda, details = FALSE)
   p = exp(-theta)
   s[1] = p
   if (details)
-    cat(paste0("x = 0, P(X = x) = ", round(p, 7), ", P(X <= x) = ",
+    message(paste0("x = 0, P(X = x) = ", round(p, 7), ", P(X <= x) = ",
                round(s[1], 7), "\n"))
   i = 1
   while (s[i] < upper) {
@@ -59,7 +59,7 @@ QuantileGpois <- function (p, theta, lambda, details = FALSE)
       if (p == 0 | p == Inf)
         break
       if (details)
-        cat(paste0("x = ", i, ", P(X = x) = ", round(p,
+        message(paste0("x = ", i, ", P(X = x) = ", round(p,
                                                      7), ", P(X <= x) = ", round(s[i + 1], 7), "\n"))
       i = i + 1
     }
@@ -68,8 +68,8 @@ QuantileGpois <- function (p, theta, lambda, details = FALSE)
     Fm = s[i]
     s[1:i] = s[1:i] * Fm^(-1)
     if (details) {
-      cat("When lambda is negative, we need to account for truncation error. ")
-      cat("The adjusted CDF are:", s[1:i], "\n")
+      message("When lambda is negative, we need to account for truncation error. ")
+      message("The adjusted CDF are:", s[1:i], "\n")
     }
   }
   for (j in 1:length(p.in)) {

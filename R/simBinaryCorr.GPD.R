@@ -60,11 +60,11 @@ simBinaryCorr.GPD<- function (GPD.theta.vec, GPD.lambda.vec, CorrMat, no.rows, s
     prop.pair <- list(prop[[pair.temp[1]]], prop [[pair.temp[2]]])
     change = 1
     iteration = 0
-    cat("calculating the intermediate binary correlations pair Sigma", pair.temp , "\n")
+    message("calculating the intermediate binary correlations pair Sigma", pair.temp , "\n")
     while (sum(change > 0.001) > 0) {
       iteration = iteration + 1
-      #cat("iteration:", iteration, "\n")
-      #cat("delta:", sum(change), "\n")
+      #message("iteration:", iteration, "\n")
+      #message("delta:", sum(change), "\n")
       inter_bin = generate.binaryVar(no.rows, pvec.pair, del.next)
       Mydata = BinToGPD(pvec.pair, prop.pair, Mlocation.pair, inter_bin)
 
@@ -92,6 +92,6 @@ simBinaryCorr.GPD<- function (GPD.theta.vec, GPD.lambda.vec, CorrMat, no.rows, s
   }
   l = is.positive.definite(del.next)
   #print(l == TRUE)
-  cat("\n required ", iteration.total, " iterations to calculate intermediate binary correlations. \n")
+  message("\n required ", iteration.total, " iterations to calculate intermediate binary correlations. \n")
   return(list(GPDprop = prop, intermat = intermat, Mlocation = Mlocation, pvec = pvec))
 }

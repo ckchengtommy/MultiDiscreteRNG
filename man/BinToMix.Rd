@@ -28,27 +28,27 @@ appropriate values from each distribution based on binary thresholds and
 probability mass functions.
 }
 \examples{
-\dontrun{
 # First simulate intermediate binary correlations
-result <- simBinaryCorr.Mix(
-GPD.theta.vec = c(1, 2),
-GPD.lambda.vec = c(0.5, 0.3),
-NB.r.vec = 10,
-NB.prob.vec = 0.2,
-B.n.vec = 5,
-B.prob.vec = 0.5,
-CorrMat = matrix(c(1, 0.3, 0.2, 0.1,
-0.3, 1, 0.4, 0.2,
-0.2, 0.4, 1, 0.3,
-0.1, 0.2, 0.3, 1), 4, 4),
-no.rows = 1000
-)
+GPD.theta.vec = 2
+GPD.lambda.vec = 0.3
+NB.r.vec = 10
+NB.prob.vec = 0.2
+
+GPD.p = calc.bin.prob.GPD(GPD.theta.vec, GPD.lambda.vec)
+NB.p = calc.bin.prob.NB(NB.r.vec, NB.prob.vec)
+pvec.pair  = c(GPD.p$p, NB.p$p)
+Mlocation.pair <- c(GPD.p$Mlocation, NB.p$Mlocation)
+prop.pair      <- list(GPD.p$prop[[1]], NB.p$prop[[1]])
+
+# Specify a target correlation matrix for two binary variables
+del.next <- matrix(c(1.0, 0.3,
+                     0.3, 1.0),
+                   nrow = 2, byrow = TRUE)
 
 # Generate correlated binary data using the intermediate matrix
-bin_data <- generate.binary(1000, result$pvec, result$intermat)
+inter_bin <- generate.binaryVar(100, pvec.pair, del.next)
 
 # Convert binary data to mixed distribution outcomes
-mixed_data <- BinToMix(result$pvec, result$Mixprop, result$Mlocation, bin_data)
-}
+mixed_data <- BinToMix(pvec.pair, prop.pair, Mlocation.pair, inter_bin)$y
 
 }
